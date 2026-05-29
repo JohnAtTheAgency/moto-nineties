@@ -2,13 +2,107 @@
 import Layout from '../layouts/Layout.astro';
 
 const riders = [
-  { slug: 'mcgrath',    name: 'Jeremy McGrath',    title: '"Showtime"',        number: '2' },
-  { slug: 'emig',       name: 'Jeff Emig',          title: '"Fro"',             number: '8' },
-  { slug: 'pastrana',   name: 'Travis Pastrana',    title: '"199"',             number: '199' },
-  { slug: 'hart',       name: 'Carey Hart',         title: '"Hart Attack"',     number: '13' },
-  { slug: 'carmichael', name: 'Ricky Carmichael',   title: '"The GOAT"',        number: '4' },
-  { slug: 'hughes',     name: 'Ryan Hughes',        title: '"Ryno"',            number: '7' },
-  { slug: 'stephenson', name: 'Denny Stephenson',   title: '"Showdown"',        number: '11' },
+  {
+    slug: 'mcgrath',
+    name: 'Jeremy McGrath',
+    nickname: '"Showtime"',
+    number: '2',
+    storyTitle: 'The First Nac Attack',
+    stats: [
+      { label: 'Hometown', value: 'Sun City, California' },
+      { label: 'Ride',     value: 'Honda CR250' },
+      { label: 'Signature', value: 'The nac nac' },
+      { label: 'Moment',   value: '1994 Supercross Series opener' },
+    ],
+    bio: 'In 1994, Jeremy McGrath was so comfortable racing Supercross, he brought the BMX tricks that influenced his riding style to the stadiums. The nac nac, a leg-swinging aerial move no one in the motocross world had ever seen, wasn\'t about distance or speed — it was about style in the air. When he landed it cleanly in practice at the 1994 Supercross opener, jaws dropped, teammates thought he\'d crashed and journalists didn\'t know what to call it. Soon the crowd knew it as the nac nac — the trick that helped turn motocross into something more expressive. The move didn\'t just become McGrath\'s trademark — it helped spark the earliest ideas of what would become freestyle motocross.',
+    partyFact: null,
+  },
+  {
+    slug: 'emig',
+    name: 'Jeff Emig',
+    nickname: '"Fro"',
+    number: '8',
+    storyTitle: 'Oats and Bran',
+    stats: [
+      { label: 'Profession', value: 'Fake cereal / real flex / late-\'90s moto artifact' },
+      { label: 'Location',   value: 'The set of Frezno Smooth' },
+      { label: 'Vibe',       value: 'Swagger with oats and bran' },
+    ],
+    bio: 'The looser the program got, the better Jeff Emig fit. Only in the late \'90s could a Supercross champion step onto the set of a cult moto film, holding a cereal box with his own name on it like it belonged there. Emig moved through Frezno Smooth cool, calm, and fully aware of the joke, never breaking character, never overplaying it. With a smirk that said oats and bran, he became the straight face inside moto satire, turning a fake product into a real moment. The movie split the moto media — praised by some, dismissed by others — but the image cut through all of it. Emig-O\'s outlived the debate, slipping into Moto Nineties folklore where explanation was never required. Fame didn\'t ask for context — it handed him a box and told him to act natural.',
+    partyFact: 'You didn\'t have to like the movie to remember the cereal. The pit board shot was filmed during an actual moto at the 1997 Steel City.',
+  },
+  {
+    slug: 'pastrana',
+    name: 'Travis Pastrana',
+    nickname: '"199"',
+    number: '199',
+    storyTitle: 'The Bay Bomber of \'99',
+    stats: [
+      { label: 'Hometown',   value: 'Davidsonville, MD' },
+      { label: 'Ride',       value: 'Suzuki RM125, fueled by blind optimism and the confidence of a fearless 15-year-old' },
+      { label: 'Risk Level', value: '"Hold my Capri Sun."' },
+    ],
+    bio: 'The best $10,000 Travis Pastrana ever lost (spent?) happened in the summer of 1999 when he attempted to backflip his RM125 into the San Francisco Bay, a rebellious move even in the alt world of action sports. The city gave a huge fine. ESPN never aired the clip, but the footage spilled from videos and Pastrana still cashes dividends from the move\'s impact. A factory-supported phenom not even old enough to race Pro Motocross, Pastrana was already upstaging the athletes he was preparing to race. The only true dual SX/MX + FMX threat, Pastrana chose freestyle when a pro racing career was a wide open option. That day on The Bay, FMX stopped flirting with insanity and fully moved in with it. The sport never looked back.',
+    partyFact: 'Pastrana did his run with Chuck Berry\'s "Johnny B. Goode" playing on the PA system. He loved leaning hard into the clean-cut, all-American good-kid image. Then he redefined what "good behavior" looked like on a dirt bike.',
+  },
+  {
+    slug: 'hart',
+    name: 'Carey Hart',
+    nickname: '"Hart Attack"',
+    number: '13',
+    storyTitle: 'The Hart Attack',
+    stats: [
+      { label: 'Hometown',  value: 'Las Vegas' },
+      { label: 'Ride',      value: 'Honda CR250' },
+      { label: 'Signature', value: 'Fully extended superman seat grab' },
+      { label: 'Moment',    value: '2000 Gravity Games' },
+    ],
+    bio: 'When you grow up doing homework by flashlight and shoveling asphalt for extra money, you learn work ethic early. Carey Hart calls himself "a tattooed scumbag from Las Vegas," but he had the work ethic — and the party vibe — needed to help push the struggling sport of FMX into the mainstream. When the hard realities of a traditional racing career didn\'t materialize, Hart didn\'t walk away. He dove into the emerging world of freestyle motocross and helped drag FMX out of VCRs and into the spotlight by jumping first, showing up first, and taking risks no one else was willing — or even thought possible. Carey Hart was a series of firsts. The first contest course was built by him and his dad. He was the first portable ramp test dummy. The first to expose freestyle to the punk crowd through the Warped Tour. And at the 2000 Gravity Games, the first to prove a backflip could be landed — advancing the sport to a new level. Hart proved freestyle wasn\'t a sideshow; it was something to be taken seriously — and it\'s kept growing ever since.',
+    partyFact: 'Hart was inches away from becoming an accountant.',
+  },
+  {
+    slug: 'carmichael',
+    name: 'Ricky Carmichael',
+    nickname: '"The GOAT"',
+    number: '4',
+    storyTitle: 'The Fun Killer',
+    stats: [
+      { label: 'Hometown',   value: 'Tallahassee, Florida' },
+      { label: 'Ride',       value: "Doesn't matter. He's still beating you on it." },
+      { label: 'Reputation', value: "Party's Over" },
+      { label: 'Moment',     value: '2000 Daytona Supercross win' },
+    ],
+    bio: "Ricky Carmichael didn't end the party. He simply didn't join it. Well, \"Meanie\" Jeanie didn't actually let him party (or even train) in SoCal. RC stayed grounded in Florida where he emptied 5-gallon jugs of race fuel faster than Bart Simpson could kill a Kwik-E-Mart Squishee. RC hated losing more than he liked winning and he didn't care about the \"scene.\" The era of style, vibes and late nights didn't gel with his discipline, structure and work ethic. He only cared about metrics that showed him getting better, every single day. When he dominated the 2000 Daytona Supercross, it felt like the beginning of the end. Not of racing, but an attitude. Some saw him as the bad guy, a killjoy. Turns out, he did know how to party — he just didn't do it with the competition.",
+    partyFact: '"Taking it easy" still meant another 30 +2.',
+  },
+  {
+    slug: 'hughes',
+    name: 'Ryan Hughes',
+    nickname: '"Ryno"',
+    number: '7',
+    storyTitle: 'The Warrior',
+    stats: [
+      { label: 'Hometown', value: 'Escondido, California' },
+      { label: 'Ride',     value: 'Kawasaki KX250 & KX125. Chains optional.' },
+      { label: 'Mindset',  value: 'Break before bend' },
+    ],
+    bio: "Ryan Hughes didn't race motocross. He waged war on it. Every moto was a battlefield, every lap a test of will, every injury something he refused to acknowledge. The race wasn't over even when the chain fell off his bike; he pushed to the finish. Uphill. Ryno rode with raw intensity, pushing past breaking points and carrying pain like fuel. A core member of the Moto Rat Pack, he brought grit, edge, and attitude to everything he lined up for. But he wasn't a one-note wonder; Hughes was dynamic, a thoughtful, funny spiritual seeker off the track, and a complete warrior on it. The nickname wasn't hype. It was a warning.",
+    partyFact: 'The only rider who made trainers nervous.',
+  },
+  {
+    slug: 'stephenson',
+    name: 'Denny Stephenson',
+    nickname: '"Debo"',
+    number: '11',
+    storyTitle: 'The Big Personality',
+    stats: [
+      { label: 'Hometown',      value: "Wherever the laughter's loudest" },
+      { label: 'Ride',          value: 'A 125 that screamed almost as loud as he did' },
+      { label: 'Claim to Fame', value: 'Talent + attitude + unlimited storytelling energy' },
+    ],
+    bio: "Denny Stephenson opened the 1990s with a dominating run through the 125SX East championship (8 wins!), kicking off the decade with a #1 plate before anyone had gotten a chance to know who Jeremy McGrath and Jeff Emig were. Then \"Debo\" became the life of the party. A walking highlight reel of speed, swagger and unprintable quotes, Stephenson was aggressive, sharp, and fearless on the bike. Off the bike? The dude could light up a pit party. Whether he was winning, talking smack, stirring up fun, or just holding court with riders and fans, Denny had a presence you couldn't ignore. He was a racer with charisma so strong it should've come with a warning label.",
+    partyFact: 'If you hung out with Denny, you woke up with stories... and maybe a headache.',
+  },
 ];
 ---
 
@@ -29,65 +123,295 @@ const riders = [
   <section class="px-5 pb-20 bg-ink">
     <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" id="card-grid">
       {riders.map((rider) => (
-        <div class="card-flip-wrapper" data-rider={rider.slug}>
-          <div class="card-flip-inner">
-            <!-- Front -->
-            <div class="card-face card-front">
-              <img
-                src={`/images/cards/${rider.slug}-front.png`}
-                alt={rider.name}
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <!-- Back -->
-            <div class="card-face card-back">
-              <img
-                src={`/images/cards/${rider.slug}-back.png`}
-                alt={`${rider.name} — card back`}
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
+        <button
+          class="card-btn text-left group"
+          data-slug={rider.slug}
+          aria-label={`View ${rider.name}`}
+        >
+          <div class="relative overflow-hidden" style="aspect-ratio: 2.5 / 3.5;">
+            <img
+              src={`/images/cards/${rider.slug}-front.png`}
+              alt={rider.name}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <!-- Hover reveal -->
+            <div class="absolute inset-0 bg-ink/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+              <span class="font-display text-xs uppercase tracking-widest text-paper leading-none">
+                View Profile
+              </span>
             </div>
           </div>
-          <p class="mt-2 font-display text-xs uppercase tracking-widest text-smoke truncate">{rider.name}</p>
-        </div>
+          <p class="mt-2 font-display text-xs uppercase tracking-widest text-smoke truncate group-hover:text-paper transition-colors duration-200">
+            {rider.name}
+          </p>
+        </button>
       ))}
     </div>
-    <p class="text-center text-smoke text-xs font-sans mt-8 tracking-widest uppercase">Tap a card to flip</p>
+    <p class="text-center text-smoke text-xs font-sans mt-8 tracking-widest uppercase">
+      Select a rider
+    </p>
   </section>
+
+  <!-- ── RIDER OVERLAY ──────────────────────────────────────────────────────── -->
+  <div
+    id="rider-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Rider profile"
+  >
+    <!-- Backdrop -->
+    <div id="overlay-backdrop" class="absolute inset-0"></div>
+
+    <!-- Close button -->
+    <button id="overlay-close" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Content -->
+    <div id="overlay-content">
+
+      <!-- Card image -->
+      <div id="overlay-card-wrap">
+        <img id="overlay-card-img" src="" alt="" />
+      </div>
+
+      <!-- Text -->
+      <div id="overlay-text">
+
+        <p id="overlay-story-title"></p>
+
+        <div id="overlay-name-block">
+          <h2 id="overlay-name"></h2>
+          <p id="overlay-nickname"></p>
+        </div>
+
+        <span class="red-rule block" style="margin-bottom: 1.5rem;"></span>
+
+        <dl id="overlay-stats"></dl>
+
+        <p id="overlay-bio"></p>
+
+        <div id="overlay-party-fact-wrap">
+          <p id="overlay-party-label">Party Fact</p>
+          <p id="overlay-party-text"></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 </Layout>
 
 <style>
-  .card-flip-wrapper {
+  /* ── Card buttons ──────────────────────────────────────────────────────── */
+  .card-btn {
+    background: none;
+    border: none;
+    padding: 0;
     cursor: pointer;
-    perspective: 800px;
-  }
-
-  .card-flip-inner {
-    position: relative;
+    display: block;
     width: 100%;
-    aspect-ratio: 2.5 / 3.5;
-    transform-style: preserve-3d;
-    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .card-flip-wrapper.flipped .card-flip-inner {
-    transform: rotateY(180deg);
-  }
-
-  .card-face {
-    position: absolute;
+  /* ── Overlay shell ─────────────────────────────────────────────────────── */
+  #rider-overlay {
+    position: fixed;
     inset: 0;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    overflow: hidden;
-    border: 1px solid rgba(240, 235, 227, 0.08);
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1rem, 4vw, 2.5rem);
+
+    /* Hidden state */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out;
   }
 
-  .card-back {
-    transform: rotateY(180deg);
+  #rider-overlay.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* Backdrop */
+  #overlay-backdrop {
+    background: rgba(8, 8, 8, 0.92);
+  }
+
+  /* Close button */
+  #overlay-close {
+    position: absolute;
+    top: clamp(1rem, 3vw, 1.75rem);
+    right: clamp(1rem, 3vw, 1.75rem);
+    z-index: 10;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    color: rgba(240, 235, 227, 0.35);
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  #overlay-close:hover {
+    color: rgba(240, 235, 227, 0.9);
+  }
+
+  /* Content grid */
+  #overlay-content {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+    max-height: calc(100svh - 4rem);
+    overflow-y: auto;
+
+    /* Slide-up on open */
+    transform: translateY(24px);
+    transition: transform 0.28s ease-out;
+  }
+
+  #rider-overlay.is-open #overlay-content {
+    transform: translateY(0);
+  }
+
+  @media (min-width: 640px) {
+    #overlay-content {
+      grid-template-columns: 260px 1fr;
+      align-items: start;
+      overflow-y: visible;
+    }
+  }
+
+  /* Card image */
+  #overlay-card-wrap {
+    flex-shrink: 0;
+  }
+
+  #overlay-card-img {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+    aspect-ratio: 2.5 / 3.5;
+    object-fit: cover;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+  }
+
+  @media (min-width: 640px) {
+    #overlay-card-img {
+      max-width: 100%;
+      transform: rotate(-2deg);
+    }
+  }
+
+  /* Text column */
+  #overlay-text {
+    padding-bottom: 2rem;
+  }
+
+  /* Story title */
+  #overlay-story-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #d81d28;
+    margin: 0 0 0.75rem;
+  }
+
+  /* Name */
+  #overlay-name {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-transform: uppercase;
+    color: #f0ebe3;
+    line-height: 1.05;
+    margin: 0 0 0.25rem;
+  }
+
+  /* Nickname */
+  #overlay-nickname {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    text-transform: uppercase;
+    color: rgba(240, 235, 227, 0.4);
+    margin: 0 0 1.25rem;
+  }
+
+  /* Stats */
+  #overlay-stats {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1.25rem;
+    margin: 0 0 1.5rem;
+  }
+
+  #overlay-stats dt {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+    padding-top: 0.1em;
+    white-space: nowrap;
+  }
+
+  #overlay-stats dd {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(240, 235, 227, 0.85);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Bio */
+  #overlay-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: rgba(240, 235, 227, 0.65);
+    margin: 0 0 1.5rem;
+    max-width: 52ch;
+  }
+
+  /* Party fact */
+  #overlay-party-fact-wrap {
+    border: 1px solid rgba(240, 235, 227, 0.08);
+    background: rgba(240, 235, 227, 0.03);
+    padding: 0.875rem 1rem;
+  }
+
+  #overlay-party-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+    margin: 0 0 0.35rem;
+  }
+
+  #overlay-party-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.65;
+    color: rgba(240, 235, 227, 0.6);
+    margin: 0;
+  }
+
+  /* Scrollbar (overlay on mobile) */
+  #overlay-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(240, 235, 227, 0.1) transparent;
   }
 </style>
 
@@ -96,13 +420,174 @@ const riders = [
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   gsap.registerPlugin(ScrollTrigger);
 
-  // Card flip on tap/click
-  document.querySelectorAll('.card-flip-wrapper').forEach(card => {
-    card.addEventListener('click', () => card.classList.toggle('flipped'));
+  // ── Rider data (mirrors frontmatter — JS needs it at runtime) ─────────────
+  const RIDERS: Record<string, {
+    name: string;
+    nickname: string;
+    storyTitle: string;
+    stats: { label: string; value: string }[];
+    bio: string;
+    partyFact: string | null;
+  }> = {
+    mcgrath: {
+      name: 'Jeremy McGrath',
+      nickname: '"Showtime"',
+      storyTitle: 'The First Nac Attack',
+      stats: [
+        { label: 'Hometown',  value: 'Sun City, California' },
+        { label: 'Ride',      value: 'Honda CR250' },
+        { label: 'Signature', value: 'The nac nac' },
+        { label: 'Moment',    value: '1994 Supercross Series opener' },
+      ],
+      bio: "In 1994, Jeremy McGrath was so comfortable racing Supercross, he brought the BMX tricks that influenced his riding style to the stadiums. The nac nac, a leg-swinging aerial move no one in the motocross world had ever seen, wasn't about distance or speed — it was about style in the air. When he landed it cleanly in practice at the 1994 Supercross opener, jaws dropped, teammates thought he'd crashed and journalists didn't know what to call it. Soon the crowd knew it as the nac nac — the trick that helped turn motocross into something more expressive. The move didn't just become McGrath's trademark — it helped spark the earliest ideas of what would become freestyle motocross.",
+      partyFact: null,
+    },
+    emig: {
+      name: 'Jeff Emig',
+      nickname: '"Fro"',
+      storyTitle: 'Oats and Bran',
+      stats: [
+        { label: 'Profession', value: "Fake cereal / real flex / late-'90s moto artifact" },
+        { label: 'Location',   value: 'The set of Frezno Smooth' },
+        { label: 'Vibe',       value: 'Swagger with oats and bran' },
+      ],
+      bio: "The looser the program got, the better Jeff Emig fit. Only in the late '90s could a Supercross champion step onto the set of a cult moto film, holding a cereal box with his own name on it like it belonged there. Emig moved through Frezno Smooth cool, calm, and fully aware of the joke, never breaking character, never overplaying it. With a smirk that said oats and bran, he became the straight face inside moto satire, turning a fake product into a real moment. The movie split the moto media — praised by some, dismissed by others — but the image cut through all of it. Emig-O's outlived the debate, slipping into Moto Nineties folklore where explanation was never required. Fame didn't ask for context — it handed him a box and told him to act natural.",
+      partyFact: "You didn't have to like the movie to remember the cereal. The pit board shot was filmed during an actual moto at the 1997 Steel City.",
+    },
+    pastrana: {
+      name: 'Travis Pastrana',
+      nickname: '"199"',
+      storyTitle: "The Bay Bomber of '99",
+      stats: [
+        { label: 'Hometown',   value: 'Davidsonville, MD' },
+        { label: 'Ride',       value: 'Suzuki RM125, fueled by blind optimism and the confidence of a fearless 15-year-old' },
+        { label: 'Risk Level', value: '"Hold my Capri Sun."' },
+      ],
+      bio: "The best $10,000 Travis Pastrana ever lost (spent?) happened in the summer of 1999 when he attempted to backflip his RM125 into the San Francisco Bay, a rebellious move even in the alt world of action sports. The city gave a huge fine. ESPN never aired the clip, but the footage spilled from videos and Pastrana still cashes dividends from the move's impact. A factory-supported phenom not even old enough to race Pro Motocross, Pastrana was already upstaging the athletes he was preparing to race. The only true dual SX/MX + FMX threat, Pastrana chose freestyle when a pro racing career was a wide open option. That day on The Bay, FMX stopped flirting with insanity and fully moved in with it. The sport never looked back.",
+      partyFact: 'Pastrana did his run with Chuck Berry\'s "Johnny B. Goode" playing on the PA system. He loved leaning hard into the clean-cut, all-American good-kid image. Then he redefined what "good behavior" looked like on a dirt bike.',
+    },
+    hart: {
+      name: 'Carey Hart',
+      nickname: '"Hart Attack"',
+      storyTitle: 'The Hart Attack',
+      stats: [
+        { label: 'Hometown',  value: 'Las Vegas' },
+        { label: 'Ride',      value: 'Honda CR250' },
+        { label: 'Signature', value: 'Fully extended superman seat grab' },
+        { label: 'Moment',    value: '2000 Gravity Games' },
+      ],
+      bio: 'When you grow up doing homework by flashlight and shoveling asphalt for extra money, you learn work ethic early. Carey Hart calls himself "a tattooed scumbag from Las Vegas," but he had the work ethic — and the party vibe — needed to help push the struggling sport of FMX into the mainstream. When the hard realities of a traditional racing career didn\'t materialize, Hart didn\'t walk away. He dove into the emerging world of freestyle motocross and helped drag FMX out of VCRs and into the spotlight by jumping first, showing up first, and taking risks no one else was willing — or even thought possible. Carey Hart was a series of firsts. The first contest course was built by him and his dad. He was the first portable ramp test dummy. The first to expose freestyle to the punk crowd through the Warped Tour. And at the 2000 Gravity Games, the first to prove a backflip could be landed — advancing the sport to a new level. Hart proved freestyle wasn\'t a sideshow; it was something to be taken seriously — and it\'s kept growing ever since.',
+      partyFact: 'Hart was inches away from becoming an accountant.',
+    },
+    carmichael: {
+      name: 'Ricky Carmichael',
+      nickname: '"The GOAT"',
+      storyTitle: 'The Fun Killer',
+      stats: [
+        { label: 'Hometown',   value: 'Tallahassee, Florida' },
+        { label: 'Ride',       value: "Doesn't matter. He's still beating you on it." },
+        { label: 'Reputation', value: "Party's Over" },
+        { label: 'Moment',     value: '2000 Daytona Supercross win' },
+      ],
+      bio: "Ricky Carmichael didn't end the party. He simply didn't join it. Well, \"Meanie\" Jeanie didn't actually let him party (or even train) in SoCal. RC stayed grounded in Florida where he emptied 5-gallon jugs of race fuel faster than Bart Simpson could kill a Kwik-E-Mart Squishee. RC hated losing more than he liked winning and he didn't care about the \"scene.\" The era of style, vibes and late nights didn't gel with his discipline, structure and work ethic. He only cared about metrics that showed him getting better, every single day. When he dominated the 2000 Daytona Supercross, it felt like the beginning of the end. Not of racing, but an attitude. Some saw him as the bad guy, a killjoy. Turns out, he did know how to party — he just didn't do it with the competition.",
+      partyFact: '"Taking it easy" still meant another 30 +2.',
+    },
+    hughes: {
+      name: 'Ryan Hughes',
+      nickname: '"Ryno"',
+      storyTitle: 'The Warrior',
+      stats: [
+        { label: 'Hometown', value: 'Escondido, California' },
+        { label: 'Ride',     value: 'Kawasaki KX250 & KX125. Chains optional.' },
+        { label: 'Mindset',  value: 'Break before bend' },
+      ],
+      bio: "Ryan Hughes didn't race motocross. He waged war on it. Every moto was a battlefield, every lap a test of will, every injury something he refused to acknowledge. The race wasn't over even when the chain fell off his bike; he pushed to the finish. Uphill. Ryno rode with raw intensity, pushing past breaking points and carrying pain like fuel. A core member of the Moto Rat Pack, he brought grit, edge, and attitude to everything he lined up for. But he wasn't a one-note wonder; Hughes was dynamic, a thoughtful, funny spiritual seeker off the track, and a complete warrior on it. The nickname wasn't hype. It was a warning.",
+      partyFact: 'The only rider who made trainers nervous.',
+    },
+    stephenson: {
+      name: 'Denny Stephenson',
+      nickname: '"Debo"',
+      storyTitle: 'The Big Personality',
+      stats: [
+        { label: 'Hometown',      value: "Wherever the laughter's loudest" },
+        { label: 'Ride',          value: 'A 125 that screamed almost as loud as he did' },
+        { label: 'Claim to Fame', value: 'Talent + attitude + unlimited storytelling energy' },
+      ],
+      bio: "Denny Stephenson opened the 1990s with a dominating run through the 125SX East championship (8 wins!), kicking off the decade with a #1 plate before anyone had gotten a chance to know who Jeremy McGrath and Jeff Emig were. Then \"Debo\" became the life of the party. A walking highlight reel of speed, swagger and unprintable quotes, Stephenson was aggressive, sharp, and fearless on the bike. Off the bike? The dude could light up a pit party. Whether he was winning, talking smack, stirring up fun, or just holding court with riders and fans, Denny had a presence you couldn't ignore. He was a racer with charisma so strong it should've come with a warning label.",
+      partyFact: "If you hung out with Denny, you woke up with stories... and maybe a headache.",
+    },
+  };
+
+  // ── DOM refs ──────────────────────────────────────────────────────────────
+  const overlay      = document.getElementById('rider-overlay')!;
+  const backdrop     = document.getElementById('overlay-backdrop')!;
+  const closeBtn     = document.getElementById('overlay-close')!;
+  const cardImg      = document.getElementById('overlay-card-img') as HTMLImageElement;
+  const storyTitle   = document.getElementById('overlay-story-title')!;
+  const nameEl       = document.getElementById('overlay-name')!;
+  const nicknameEl   = document.getElementById('overlay-nickname')!;
+  const statsEl      = document.getElementById('overlay-stats')!;
+  const bioEl        = document.getElementById('overlay-bio')!;
+  const partyWrap    = document.getElementById('overlay-party-fact-wrap')!;
+  const partyText    = document.getElementById('overlay-party-text')!;
+
+  // ── Open ──────────────────────────────────────────────────────────────────
+  function openOverlay(slug: string) {
+    const rider = RIDERS[slug];
+    if (!rider) return;
+
+    // Populate
+    cardImg.src = `/images/cards/${slug}-front.png`;
+    cardImg.alt = rider.name;
+    storyTitle.textContent = rider.storyTitle;
+    nameEl.textContent = rider.name;
+    nicknameEl.textContent = rider.nickname;
+
+    // Stats
+    statsEl.innerHTML = rider.stats
+      .map(s => `<dt>${s.label}</dt><dd>${s.value}</dd>`)
+      .join('');
+
+    // Bio
+    bioEl.textContent = rider.bio;
+
+    // Party fact
+    if (rider.partyFact) {
+      partyText.textContent = rider.partyFact;
+      partyWrap.style.display = '';
+    } else {
+      partyWrap.style.display = 'none';
+    }
+
+    // Show
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  // ── Close ─────────────────────────────────────────────────────────────────
+  function closeOverlay() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  // ── Event listeners ───────────────────────────────────────────────────────
+  document.querySelectorAll<HTMLButtonElement>('.card-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const slug = btn.dataset.slug;
+      if (slug) openOverlay(slug);
+    });
   });
 
-  // Staggered entrance
-  gsap.from('.card-flip-wrapper', {
+  closeBtn.addEventListener('click', closeOverlay);
+  backdrop.addEventListener('click', closeOverlay);
+
+  document.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Escape') closeOverlay();
+  });
+
+  // ── Staggered entrance ────────────────────────────────────────────────────
+  gsap.from('.card-btn', {
     opacity: 0,
     y: 40,
     duration: 0.6,
