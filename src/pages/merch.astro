@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Merch — Moto Nineties">
+
+  <section class="pt-32 pb-12 px-5 bg-ink">
+    <div class="max-w-4xl mx-auto">
+      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">Gear Up</p>
+      <h1 class="font-display text-5xl sm:text-7xl uppercase text-paper leading-none">
+        Merch.
+      </h1>
+      <span class="red-rule mt-6 block"></span>
+    </div>
+  </section>
+
+  <section class="px-5 pb-20 bg-ink">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col sm:flex-row gap-8 items-start mb-16">
+        <img
+          src="/images/MErch-Group-Sm.png"
+          alt="Moto Nineties Merch"
+          class="w-full sm:w-72 shrink-0"
+        />
+        <div class="pt-4">
+          <p class="font-sans text-paper/70 text-sm leading-relaxed mb-6">
+            Limited run. Built for people who were there — and those who wish they were.
+          </p>
+          <p class="font-sans text-smoke text-xs tracking-widest uppercase">Shop launches with the film.</p>
+          <span class="red-rule mt-4 block"></span>
+        </div>
+      </div>
+
+      <!-- Shopify embed placeholder -->
+      <div
+        id="shopify-section"
+        class="border border-paper/10 p-10 text-center"
+      >
+        <!-- Replace with Shopify Buy Button embed script -->
+        <p class="font-sans text-smoke text-xs tracking-widest uppercase mb-2">Shop Coming Soon</p>
+        <p class="font-sans text-paper/40 text-sm">Drop your email on the home page to get notified first.</p>
+        <a href="/#email" class="inline-block mt-4 text-xs font-display tracking-widest uppercase text-red hover:text-paper transition-colors">
+          Get Early Access →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+
+  gsap.from('section > div > *', {
+    opacity: 0, y: 30, duration: 0.9, stagger: 0.1, delay: 0.3, ease: 'power2.out',
+  });
+</script>

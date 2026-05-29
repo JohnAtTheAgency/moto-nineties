@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="The Film — Moto Nineties">
+
+  <!-- ── HERO ──────────────────────────────────────────────────────────────── -->
+  <section class="relative min-h-svh flex flex-col justify-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/Moto-Nineties-McGrath-Emig-War-2.jpg"
+        alt=""
+        class="w-full h-full object-cover photo-bw"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20"></div>
+    </div>
+    <div class="relative z-10 px-5 pb-16 pt-32 max-w-2xl">
+      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">The Film</p>
+      <h1 class="font-display text-5xl sm:text-7xl uppercase text-paper leading-none mb-6">
+        Rub Some<br/>
+        <span class="text-red">Dirt on It.</span>
+      </h1>
+      <span class="red-rule mb-6 block"></span>
+      <p class="font-sans text-paper/70 text-sm sm:text-base leading-relaxed max-w-sm">
+        The rivalry between Jeremy McGrath and Jeff Emig defined the wildest era in motocross history.
+        This is their war.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── SYNOPSIS ───────────────────────────────────────────────────────────── -->
+  <section class="section bg-ink">
+    <div class="max-w-xl mx-auto">
+      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-6">The Story</p>
+      <h2 class="font-display text-3xl sm:text-5xl uppercase text-paper leading-none mb-8">
+        McGrath vs Emig.
+      </h2>
+      <div class="space-y-4 font-sans text-paper/70 text-sm sm:text-base leading-relaxed">
+        <p>
+          In the late nineties, two riders transformed motocross into something else entirely —
+          a spectacle, a soap opera, a war. Jeremy McGrath was the king. Jeff Emig was the
+          challenger who wouldn't back down.
+        </p>
+        <p>
+          What they called the fun era was anything but. It was the most intense period the sport
+          has ever seen.
+        </p>
+      </div>
+      <div class="mt-10 pt-10 border-t border-paper/10">
+        <p class="font-display text-xl sm:text-3xl uppercase text-paper/40 italic leading-snug max-w-sm">
+          "They call it the fun era.<br/>
+          <span class="text-red not-italic">It was really a war."</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMING SUMMER ─────────────────────────────────────────────────────── -->
+  <section class="relative section overflow-hidden bg-ink border-t border-paper/10">
+    <img
+      src="/images/Moto-Nineties-Coming-Summer.png"
+      alt="Coming Summer 2026"
+      class="max-w-xs sm:max-w-md mx-auto block"
+    />
+  </section>
+
+  <!-- ── CREDITS ────────────────────────────────────────────────────────────── -->
+  <section class="section bg-ink border-t border-paper/10">
+    <div class="max-w-xl mx-auto">
+      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-8">Credits</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 font-sans text-sm">
+        <div>
+          <p class="text-smoke text-xs tracking-widest uppercase mb-3">Executive Producers</p>
+          <ul class="space-y-1 text-paper/80">
+            <li>Lawrence Lewis</li>
+            <li>Carey Hart</li>
+            <li>Travis Pastrana</li>
+            <li>John Fox</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-smoke text-xs tracking-widest uppercase mb-3">Managing Producer</p>
+          <ul class="space-y-1 text-paper/80">
+            <li>Adriana Zyskowski</li>
+          </ul>
+          <p class="text-smoke text-xs tracking-widest uppercase mb-3 mt-6">Secret Weapons</p>
+          <ul class="space-y-1 text-paper/80">
+            <li>Ian Gram</li>
+            <li>Geoffrey Boynton</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.relative.z-10 > *', {
+    y: 30, opacity: 0, duration: 0.9, stagger: 0.12, delay: 0.4, ease: 'power2.out',
+  });
+
+  gsap.utils.toArray('section:not(:first-child)').forEach((el) => {
+    gsap.from(el as Element, {
+      opacity: 0, y: 30, duration: 0.8, ease: 'power2.out',
+      scrollTrigger: { trigger: el as Element, start: 'top 85%' },
+    });
+  });
+</script>

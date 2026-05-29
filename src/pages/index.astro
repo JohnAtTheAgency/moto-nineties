@@ -1,0 +1,386 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Moto Nineties — Coming Summer 2026">
+
+  <!-- ── HERO ──────────────────────────────────────────────────────────────── -->
+  <!--
+    overflow-hidden is on the BG wrapper, NOT the section,
+    so the bottom tape can bleed down over the next section.
+  -->
+  <section class="relative min-h-svh flex flex-col items-center justify-center" id="hero">
+
+    <!-- Background — overflow-hidden keeps the photo contained -->
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src="/images/Moto-Nineties-Poster-Top.jpg"
+        alt=""
+        class="photo-bw w-full h-full object-cover object-top"
+        id="hero-bg"
+        style="transform: scale(1.04); transform-origin: center top;"
+      />
+      <!-- Blue poster overlay -->
+      <div class="absolute inset-0"
+           style="background: linear-gradient(to bottom, rgba(4,55,124,0.45) 0%, rgba(8,8,8,0.3) 40%, rgba(8,8,8,0.88) 80%, rgba(8,8,8,0.96) 100%);">
+      </div>
+      <!-- Red bleed at bottom -->
+      <div class="absolute bottom-0 left-0 right-0 h-48"
+           style="background: linear-gradient(to top, rgba(216,29,40,0.2) 0%, transparent 100%);">
+      </div>
+    </div>
+
+    <!-- Logo + tagline — centered -->
+    <div class="relative z-20 flex flex-col items-center text-center px-5 pt-14 pb-32">
+      <img
+        src="/images/Moto-Nineties-Full-Logo.png"
+        alt="Moto Nineties"
+        id="hero-logo"
+        class="w-[322px] sm:w-[483px] md:w-[644px] drop-shadow-2xl"
+      />
+      <img
+        id="hero-tagline"
+        src="/images/Nineties-are-back-Headline.png"
+        alt="The Nineties Are Back"
+        class="mt-0 mb-5 drop-shadow-lg"
+        style="width: clamp(260px, 45vw, 480px);"
+      />
+      <span id="hero-rule" class="red-rule mx-auto block mb-6"></span>
+
+      <!-- Email capture -->
+      <div id="hero-email-block" class="w-full max-w-lg">
+        <p class="font-display text-red uppercase leading-none mb-3" style="font-size: clamp(1.5rem, 3vw, 2.25rem);">
+          A Feature-Length Documentary
+        </p>
+        <p class="font-sans text-paper/80 text-sm mb-5">
+          Pop-up premieres. Exclusive drops. First access to the film.
+        </p>
+        <form
+          class="flex gap-0"
+          onsubmit="handleHeroEmail(event)"
+          id="hero-email-form"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            class="flex-1 min-w-0 bg-white/70 border-0 px-4 py-3 text-sm text-ink placeholder:text-ink/50 focus:outline-none focus:bg-white/90 font-sans rounded-l-full transition-colors"
+          />
+          <button
+            type="submit"
+            class="bg-red text-paper px-5 py-3 text-xs font-display tracking-widest uppercase hover:bg-paper hover:text-ink transition-colors shrink-0 whitespace-nowrap rounded-r-full"
+          >
+            Get Early Access
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!--
+      Duct tape at the hero/war seam.
+      position: absolute; bottom: -28px puts it overlapping the next section.
+      z-index: 30 keeps it on top of both sections' content.
+    -->
+    <img
+      src="/images/Moto-Nineties-Coming-Summer.png"
+      alt=""
+      class="absolute left-1/2 pointer-events-none z-30"
+      style="bottom: 0; transform: translateX(-50%) translateY(50%); max-width: 600px; width: 60%;"
+      id="seam-tape"
+    />
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 opacity-25" id="scroll-hint">
+      <span class="block w-px h-10 bg-paper mx-auto"></span>
+    </div>
+  </section>
+
+  <!-- ── THE WAR — white section ───────────────────────────────────────────── -->
+  <section class="relative bg-white" id="war-section">
+    <div class="max-w-5xl mx-auto px-5" style="padding-top: 10rem; padding-bottom: 4rem;">
+
+      <!-- Row 1: Headline — full width, centered, own line -->
+      <div class="mb-5 text-center" id="war-headline-wrap">
+        <p class="font-display text-red uppercase leading-none"
+           id="war-headline"
+           style="font-size: clamp(2.88rem, 5.47vw, 5.76rem); transform: rotate(3deg); display: inline-block;">
+          The 90's Made Motocross<br/>Look Like a Party.
+        </p>
+      </div>
+
+      <!-- Row 2: 3/4 image + 1/4 text -->
+      <div class="grid grid-cols-4 gap-3 items-center">
+
+        <!-- 3/4: It Was War composite — bleeds to container left edge -->
+        <div class="col-span-3 -ml-5" id="war-image">
+          <img
+            src="/images/Moto-Nineties-McGrath-Emig-War-2.jpg"
+            alt="McGrath vs Emig — It Was War"
+            class="w-full"
+          />
+        </div>
+
+        <!-- 1/4: Copy -->
+        <div class="col-span-1" id="war-copy">
+          <p class="font-display text-blue uppercase leading-snug mb-4" style="font-size: clamp(1.15rem, 1.9vw, 1.55rem);">
+            In the late nineties, two riders transformed motocross into something else entirely — a spectacle, a soap opera, a war.
+          </p>
+          <p class="font-sans text-ink/80 leading-relaxed mb-6" style="font-size: clamp(0.9rem, 1.1vw, 1rem);">
+            Jeremy McGrath was the king. Jeff Emig was the challenger who wouldn't back down.
+            What they called the fun era was anything but.
+          </p>
+          <div class="flex items-center gap-4">
+            <span class="red-rule block shrink-0"></span>
+            <a href="/the-film"
+               class="font-display text-xs tracking-widest uppercase text-red hover:text-ink transition-colors">
+              The Film →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRAILER ────────────────────────────────────────────────────────────── -->
+  <section class="section relative overflow-hidden" style="background: #04377c;" id="trailer-section">
+    <img src="/images/Blue-Scratch-background.jpg" alt=""
+         class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none mix-blend-overlay" />
+    <div class="max-w-3xl mx-auto relative z-10">
+      <p class="font-sans text-paper/60 text-xs tracking-[0.15em] uppercase mb-4" id="trailer-label">Watch</p>
+      <h2 class="font-display text-4xl sm:text-6xl uppercase text-paper mb-8 leading-none" id="trailer-heading">
+        The Trailer
+      </h2>
+      <div class="relative w-full aspect-video bg-ink/40 border border-paper/20 flex items-center justify-center" id="trailer-player">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full border-2 border-red flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-red/20 transition-colors">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M6 4l12 6-12 6V4z" fill="#d81d28"/>
+            </svg>
+          </div>
+          <p class="font-sans text-paper/60 text-xs">Available at The Hammer Factory</p>
+          <a
+            href="https://thehammerfactory.com"
+            target="_blank"
+            rel="noopener"
+            class="inline-block mt-3 text-xs font-display tracking-widest uppercase text-red hover:text-paper transition-colors"
+          >
+            Watch Now →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EMAIL CAPTURE ──────────────────────────────────────────────────────── -->
+  <section class="section relative overflow-hidden bg-ink border-t border-red/20" id="email">
+    <img
+      src="/images/PaintSprayRight.png"
+      alt=""
+      class="absolute right-0 top-0 h-full object-contain object-right opacity-15 pointer-events-none"
+    />
+    <div class="relative z-10 max-w-lg mx-auto text-center">
+      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">Early Access</p>
+      <h2 class="font-display text-5xl sm:text-7xl uppercase text-paper leading-none mb-4" id="email-heading">
+        Be First.
+      </h2>
+      <p class="font-sans text-paper/60 text-sm mb-8">
+        Screenings, premiere details, and merch drops — before anyone else.
+      </p>
+      <form
+        class="flex flex-col sm:flex-row gap-0 max-w-sm mx-auto"
+        onsubmit="handleEmailSubmit(event)"
+        id="email-form-wrap"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email"
+          required
+          class="flex-1 bg-paper/10 border border-paper/20 px-4 py-3.5 text-sm text-paper placeholder:text-paper/40 focus:outline-none focus:border-red font-sans"
+        />
+        <button
+          type="submit"
+          class="bg-red text-paper px-6 py-3.5 text-xs font-display tracking-widest uppercase hover:bg-paper hover:text-ink transition-colors shrink-0"
+        >
+          Join
+        </button>
+      </form>
+      <p class="text-paper/30 text-xs mt-3 font-sans">No spam. Ever.</p>
+    </div>
+  </section>
+
+  <!-- ── INSTAGRAM ─────────────────────────────────────────────────────────── -->
+  <section class="section relative overflow-hidden" style="background: #04377c;">
+    <img src="/images/Blue-Scratch-background.jpg" alt=""
+         class="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none" />
+    <div class="relative z-10 max-w-xl mx-auto text-center">
+      <p class="font-sans text-paper/60 text-xs tracking-[0.15em] uppercase mb-4">Follow the story</p>
+      <a
+        href="https://www.instagram.com/moto.nineties"
+        target="_blank"
+        rel="noopener"
+        class="font-display text-5xl sm:text-7xl uppercase text-paper hover:text-red transition-colors leading-none block mb-6"
+        id="ig-handle"
+      >
+        @moto.nineties
+      </a>
+      <span class="red-rule mx-auto block"></span>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+  // Nav slides in
+  tl.from('#site-nav', { y: -20, opacity: 0, duration: 0.8 }, 0.1);
+
+  // BG photo dramatic zoom pull-back
+  gsap.fromTo('#hero-bg',
+    { scale: 1.3, transformOrigin: 'center top' },
+    { scale: 1.04, duration: 4.5, ease: 'power2.out' }
+  );
+
+  // Logo drops in
+  tl.from('#hero-logo', { opacity: 0, y: 28, scale: 0.94, duration: 1.0 }, 0.6);
+
+  // Tagline
+  tl.from('#hero-tagline', { opacity: 0, y: 12, duration: 0.7 }, 1.2);
+
+  // Rule
+  tl.from('#hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 0.4 }, 1.6);
+
+  // Sub text
+  tl.from('#hero-sub', { opacity: 0, duration: 0.5 }, 1.8);
+
+  // Seam tape slaps in
+  tl.from('#seam-tape', { scaleX: 0, opacity: 0, duration: 0.35, transformOrigin: 'left center', ease: 'power3.out' }, 1.5);
+
+  // Scroll hint fade
+  gsap.to('#scroll-hint', {
+    opacity: 0,
+    scrollTrigger: { trigger: 'body', start: '80px top', scrub: true },
+  });
+
+  // ── War section ─────────────────────────────────────────────────────────────
+  // Headline slams in and overshoots its resting rotation before settling
+  gsap.from('#war-headline', {
+    opacity: 0,
+    y: 80,
+    rotation: 10,
+    scale: 0.88,
+    duration: 1.1,
+    ease: 'back.out(1.4)',
+    scrollTrigger: { trigger: '#war-headline-wrap', start: 'top 85%' },
+  });
+
+  // Image sweeps in from the left with a slight skew that straightens
+  gsap.from('#war-image', {
+    opacity: 0,
+    x: -70,
+    skewY: 2,
+    duration: 1.0,
+    ease: 'power3.out',
+    scrollTrigger: { trigger: '#war-image', start: 'top 88%' },
+  });
+
+  // Copy children stagger up
+  gsap.from('#war-copy > *', {
+    opacity: 0,
+    y: 28,
+    duration: 0.7,
+    ease: 'power2.out',
+    stagger: 0.12,
+    scrollTrigger: { trigger: '#war-copy', start: 'top 88%' },
+  });
+
+  // ── Trailer section ──────────────────────────────────────────────────────────
+  // Label drifts up first
+  gsap.from('#trailer-label', {
+    opacity: 0,
+    y: 16,
+    duration: 0.55,
+    ease: 'power2.out',
+    scrollTrigger: { trigger: '#trailer-section', start: 'top 82%' },
+  });
+
+  // Heading slams down from above
+  gsap.from('#trailer-heading', {
+    opacity: 0,
+    y: -52,
+    duration: 0.75,
+    ease: 'power4.out',
+    scrollTrigger: { trigger: '#trailer-section', start: 'top 82%' },
+    delay: 0.12,
+  });
+
+  // Player box rises up after heading lands
+  gsap.from('#trailer-player', {
+    opacity: 0,
+    y: 48,
+    duration: 0.9,
+    ease: 'power2.out',
+    scrollTrigger: { trigger: '#trailer-player', start: 'top 92%' },
+    delay: 0.2,
+  });
+
+  // ── Email section ────────────────────────────────────────────────────────────
+  // "Be First." pops in with scale overshoot
+  gsap.from('#email-heading', {
+    opacity: 0,
+    scale: 0.8,
+    y: 24,
+    duration: 0.85,
+    ease: 'back.out(1.8)',
+    scrollTrigger: { trigger: '#email', start: 'top 80%' },
+  });
+
+  // Form rises after heading settles
+  gsap.from('#email-form-wrap', {
+    opacity: 0,
+    y: 36,
+    duration: 0.7,
+    ease: 'power2.out',
+    scrollTrigger: { trigger: '#email', start: 'top 80%' },
+    delay: 0.28,
+  });
+
+  // ── Instagram section ────────────────────────────────────────────────────────
+  gsap.from('#ig-handle', {
+    opacity: 0,
+    scale: 0.82,
+    y: 28,
+    duration: 0.9,
+    ease: 'power3.out',
+    scrollTrigger: { trigger: '#ig-handle', start: 'top 88%' },
+  });
+</script>
+
+<script is:inline>
+  function handleHeroEmail(e) {
+    e.preventDefault();
+    const email = e.target.email.value.trim();
+    // TODO: replace localStorage with Mailchimp / Klaviyo / backend endpoint
+    const stored = JSON.parse(localStorage.getItem('mn_emails') || '[]');
+    stored.push({ email, date: new Date().toISOString() });
+    localStorage.setItem('mn_emails', JSON.stringify(stored));
+    document.getElementById('hero-email-block').innerHTML =
+      '<p style="color:#f0ebe3;font-family:Inter,sans-serif;font-size:1rem;font-weight:500;">You\'re on the list. See you at the premiere.</p>';
+  }
+
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    const email = e.target.email.value.trim();
+    const stored = JSON.parse(localStorage.getItem('mn_emails') || '[]');
+    stored.push({ email, date: new Date().toISOString() });
+    localStorage.setItem('mn_emails', JSON.stringify(stored));
+    e.target.innerHTML = '<p style="color:#f0ebe3;font-family:Inter,sans-serif;font-size:0.875rem;">You\'re on the list. See you at the premiere.</p>';
+  }
+</script>

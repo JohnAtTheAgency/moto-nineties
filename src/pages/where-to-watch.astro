@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Where to Watch — Moto Nineties">
+
+  <!-- ── HEADER ────────────────────────────────────────────────────────────── -->
+  <section class="pt-32 pb-12 px-5 bg-ink">
+    <div class="max-w-4xl mx-auto">
+      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">Screenings & Premiere</p>
+      <h1 class="font-display text-5xl sm:text-7xl uppercase text-paper leading-none">
+        Where to<br/><span class="text-red">Watch.</span>
+      </h1>
+      <span class="red-rule mt-6 block"></span>
+    </div>
+  </section>
+
+  <!-- ── HAMMER FACTORY ─────────────────────────────────────────────────────── -->
+  <section class="px-5 pb-20 bg-ink">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col sm:flex-row gap-12 items-start mb-20">
+        <div class="sm:w-1/2">
+          <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">Now Available</p>
+          <h2 class="font-display text-3xl sm:text-5xl uppercase text-paper leading-none mb-6">
+            The Hammer<br/>Factory
+          </h2>
+          <p class="font-sans text-paper/70 text-sm leading-relaxed mb-8">
+            The trailer is live. Watch it now at The Hammer Factory — the home of motorsport storytelling.
+          </p>
+          <a
+            href="https://thehammerfactory.com"
+            target="_blank"
+            rel="noopener"
+            class="inline-block bg-red text-paper px-8 py-4 font-display text-xs tracking-widest uppercase hover:bg-paper hover:text-ink transition-colors"
+          >
+            Watch the Trailer →
+          </a>
+        </div>
+        <div class="sm:w-1/2 border border-paper/10 p-8 flex flex-col justify-center min-h-48">
+          <p class="font-display text-sm uppercase tracking-widest text-smoke mb-2">Full Film</p>
+          <p class="font-display text-2xl sm:text-3xl uppercase text-paper/40 leading-snug">
+            Coming<br/>Summer 2026
+          </p>
+          <span class="red-rule mt-6 block"></span>
+        </div>
+      </div>
+
+      <!-- Screenings -->
+      <div class="border-t border-paper/10 pt-16 mb-20">
+        <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-8">Screenings</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-paper/10">
+          <!-- Screening placeholder 1 -->
+          <div class="bg-ink p-8">
+            <p class="font-display text-xs tracking-widest uppercase text-smoke mb-3">Premiere</p>
+            <p class="font-display text-xl uppercase text-paper mb-2">Location TBA</p>
+            <p class="font-sans text-paper/50 text-sm">Summer 2026</p>
+          </div>
+          <!-- Screening placeholder 2 -->
+          <div class="bg-ink p-8">
+            <p class="font-display text-xs tracking-widest uppercase text-smoke mb-3">Tour Date</p>
+            <p class="font-display text-xl uppercase text-paper mb-2">More Dates Coming</p>
+            <p class="font-sans text-paper/50 text-sm">Get notified below</p>
+          </div>
+        </div>
+        <p class="font-sans text-smoke text-xs mt-4">Screening locations announced to the list first.</p>
+      </div>
+
+      <!-- Email capture -->
+      <div id="email" class="relative overflow-hidden border border-paper/10 p-10 sm:p-16 text-center">
+        <img
+          src="/images/PaintSprayRight.png"
+          alt=""
+          class="absolute right-0 top-0 h-full object-contain object-right opacity-10 pointer-events-none"
+        />
+        <div class="relative z-10">
+          <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">Don't Miss It</p>
+          <h2 class="font-display text-3xl sm:text-5xl uppercase text-paper leading-none mb-4">
+            Get Notified First.
+          </h2>
+          <p class="font-sans text-paper/60 text-sm mb-8 max-w-xs mx-auto">
+            Screenings, premiere details, and the full release — before the rest of the world.
+          </p>
+          <form
+            class="flex flex-col sm:flex-row gap-0 max-w-sm mx-auto"
+            onsubmit="handleWatchEmailSubmit(event)"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              class="flex-1 bg-paper/10 border border-paper/20 px-4 py-3.5 text-sm text-paper placeholder:text-paper/40 focus:outline-none focus:border-paper/50 font-sans"
+            />
+            <button
+              type="submit"
+              class="bg-red text-paper px-6 py-3.5 text-xs font-display tracking-widest uppercase hover:bg-paper hover:text-ink transition-colors shrink-0"
+            >
+              Join
+            </button>
+          </form>
+          <p class="text-paper/30 text-xs mt-3 font-sans">No spam. Ever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('section > div > *', {
+    opacity: 0, y: 30, duration: 0.9, stagger: 0.1, delay: 0.3, ease: 'power2.out',
+  });
+
+  gsap.utils.toArray('section:not(:first-child)').forEach((el) => {
+    gsap.from(el as Element, {
+      opacity: 0, y: 30, duration: 0.8, ease: 'power2.out',
+      scrollTrigger: { trigger: el as Element, start: 'top 85%' },
+    });
+  });
+</script>
+
+<script is:inline>
+  function handleWatchEmailSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    // TODO: wire to email provider (Mailchimp, Klaviyo, etc.)
+    form.innerHTML = '<p style="color:#f0ebe3;font-family:Inter,sans-serif;font-size:0.875rem;">You\'re on the list. See you at the premiere.</p>';
+    console.log('Email captured:', email);
+  }
+</script>

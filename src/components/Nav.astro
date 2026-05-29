@@ -1,0 +1,114 @@
+---
+const links = [
+  { href: '/the-film',        label: 'The Film' },
+  { href: '/the-riders',      label: 'The Riders' },
+  { href: '/merch',           label: 'Merch' },
+  { href: '/where-to-watch',  label: 'Where to Watch' },
+];
+
+const current = Astro.url.pathname;
+const isHome  = current === '/';
+---
+
+<!-- Full-width black tape at the very top — top edge clipped by viewport -->
+<div class="fixed top-0 left-0 right-0 z-40 pointer-events-none overflow-hidden" style="height: 60px;">
+  <img src="/images/BlackTape-Long.png" alt="" class="w-full absolute" style="top: -18px;" />
+</div>
+
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-6 py-5" id="site-nav">
+
+  <!-- Logo: absolute left on inner pages only -->
+  {!isHome && (
+    <a href="/" class="absolute left-6 shrink-0">
+      <img src="/images/Moto-Nineties-Full-Logo.png" alt="Moto Nineties" class="h-10 w-auto" />
+    </a>
+  )}
+
+  <!-- Desktop nav — centered, single row -->
+  <nav class="hidden md:flex items-center gap-7 whitespace-nowrap">
+    {links.map(l => (
+      <a
+        href={l.href}
+        class={`font-racing text-lg transition-all duration-150 leading-none inline-block hover:scale-105 hover:rotate-1 ${
+          current.startsWith(l.href) ? 'text-red' : 'text-paper hover:text-red'
+        }`}
+      >
+        {l.label}
+      </a>
+    ))}
+    <!-- Instagram: SVG icon + Inter text, visually smaller than nav links -->
+    <a
+      href="https://www.instagram.com/moto.nineties"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center gap-1.5 text-paper hover:text-red transition-colors"
+    >
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      <span class="font-sans text-sm tracking-wide">moto.nineties</span>
+    </a>
+  </nav>
+
+  <!-- Mobile menu button — absolute right -->
+  <button id="menu-btn" aria-label="Open menu" class="absolute right-6 md:hidden flex flex-col gap-1.5 p-2">
+    <span class="block w-6 h-px bg-paper transition-all" id="bar1"></span>
+    <span class="block w-6 h-px bg-paper transition-all" id="bar2"></span>
+    <span class="block w-4 h-px bg-paper transition-all" id="bar3"></span>
+  </button>
+</header>
+
+<!-- Mobile menu overlay -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-40 bg-ink/97 flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300"
+>
+  {links.map(l => (
+    <a href={l.href} class="font-racing text-4xl text-paper hover:text-red transition-colors">
+      {l.label}
+    </a>
+  ))}
+  <a
+    href="https://www.instagram.com/moto.nineties"
+    target="_blank"
+    rel="noopener"
+    class="flex items-center gap-2 text-smoke hover:text-red transition-colors mt-4"
+  >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+    <span class="font-sans text-lg tracking-wide">moto.nineties</span>
+  </a>
+</div>
+
+<script>
+  const btn  = document.getElementById('menu-btn')!;
+  const menu = document.getElementById('mobile-menu')!;
+  const bar1 = document.getElementById('bar1')!;
+  const bar2 = document.getElementById('bar2')!;
+  const bar3 = document.getElementById('bar3')!;
+  let open = false;
+
+  btn.addEventListener('click', () => {
+    open = !open;
+    menu.style.transform = open ? 'translateX(0)' : 'translateX(100%)';
+    bar1.style.transform = open ? 'translateY(6px) rotate(45deg)' : '';
+    bar2.style.opacity   = open ? '0' : '1';
+    bar3.style.transform = open ? 'translateY(-6px) rotate(-45deg)' : '';
+    bar3.style.width     = open ? '1.5rem' : '1rem';
+  });
+
+  menu.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      open = false;
+      menu.style.transform = 'translateX(100%)';
+      bar1.style.transform = bar3.style.transform = '';
+      bar2.style.opacity = '1';
+      bar3.style.width = '1rem';
+    })
+  );
+</script>
