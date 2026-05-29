@@ -15,42 +15,50 @@ const isHome  = current === '/';
   <img src="/images/BlackTape-Long.png" alt="" class="w-full absolute" style="top: -18px;" />
 </div>
 
-<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-6 py-5" id="site-nav">
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-6 overflow-visible" style="height: 60px;" id="site-nav">
 
-  <!-- Logo: absolute left on inner pages only -->
-  {!isHome && (
-    <a href="/" class="absolute left-6 shrink-0">
-      <img src="/images/Moto-Nineties-Full-Logo.png" alt="Moto Nineties" class="h-10 w-auto" />
-    </a>
-  )}
+  <!-- Logo + nav: grouped and centered together on inner pages -->
+  <div class="flex items-center" style={!isHome ? 'gap: 30px;' : ''}>
 
-  <!-- Desktop nav — centered, single row -->
-  <nav class="hidden md:flex items-center gap-7 whitespace-nowrap">
-    {links.map(l => (
-      <a
-        href={l.href}
-        class={`font-racing text-lg transition-all duration-150 leading-none inline-block hover:scale-105 hover:rotate-1 ${
-          current.startsWith(l.href) ? 'text-red' : 'text-paper hover:text-red'
-        }`}
-      >
-        {l.label}
+    {!isHome && (
+      <a href="/" class="shrink-0 hidden md:block" style="align-self: flex-start; margin-top: 32px;">
+        <img
+          src="/images/Moto-Nineties-Logo-Simple.svg"
+          alt="Moto Nineties"
+          style="height: 58px; width: auto; filter: brightness(0) invert(1);"
+        />
       </a>
-    ))}
-    <!-- Instagram: SVG icon + Inter text, visually smaller than nav links -->
-    <a
-      href="https://www.instagram.com/moto.nineties"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center gap-1.5 text-paper hover:text-red transition-colors"
-    >
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-      </svg>
-      <span class="font-sans text-sm tracking-wide">moto.nineties</span>
-    </a>
-  </nav>
+    )}
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-7 whitespace-nowrap">
+      {links.map(l => (
+        <a
+          href={l.href}
+          class={`font-racing text-lg transition-all duration-150 leading-none inline-block hover:scale-105 hover:rotate-1 ${
+            current.startsWith(l.href) ? 'text-red' : 'text-paper hover:text-red'
+          }`}
+        >
+          {l.label}
+        </a>
+      ))}
+      <!-- Instagram -->
+      <a
+        href="https://www.instagram.com/moto.nineties"
+        target="_blank"
+        rel="noopener"
+        class="flex items-center gap-1.5 text-paper hover:text-red transition-colors"
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="font-sans text-sm tracking-wide">moto.nineties</span>
+      </a>
+    </nav>
+
+  </div>
 
   <!-- Mobile menu button — absolute right -->
   <button id="menu-btn" aria-label="Open menu" class="absolute right-6 md:hidden flex flex-col gap-1.5 p-2">

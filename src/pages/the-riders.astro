@@ -2,156 +2,88 @@
 import Layout from '../layouts/Layout.astro';
 
 const riders = [
-  {
-    slug: 'mcgrath',
-    name: 'Jeremy McGrath',
-    nickname: '"Showtime"',
-    number: '2',
-    storyTitle: 'The First Nac Attack',
-    stats: [
-      { label: 'Hometown', value: 'Sun City, California' },
-      { label: 'Ride',     value: 'Honda CR250' },
-      { label: 'Signature', value: 'The nac nac' },
-      { label: 'Moment',   value: '1994 Supercross Series opener' },
-    ],
-    bio: 'In 1994, Jeremy McGrath was so comfortable racing Supercross, he brought the BMX tricks that influenced his riding style to the stadiums. The nac nac, a leg-swinging aerial move no one in the motocross world had ever seen, wasn\'t about distance or speed — it was about style in the air. When he landed it cleanly in practice at the 1994 Supercross opener, jaws dropped, teammates thought he\'d crashed and journalists didn\'t know what to call it. Soon the crowd knew it as the nac nac — the trick that helped turn motocross into something more expressive. The move didn\'t just become McGrath\'s trademark — it helped spark the earliest ideas of what would become freestyle motocross.',
-    partyFact: null,
-  },
-  {
-    slug: 'emig',
-    name: 'Jeff Emig',
-    nickname: '"Fro"',
-    number: '8',
-    storyTitle: 'Oats and Bran',
-    stats: [
-      { label: 'Profession', value: 'Fake cereal / real flex / late-\'90s moto artifact' },
-      { label: 'Location',   value: 'The set of Frezno Smooth' },
-      { label: 'Vibe',       value: 'Swagger with oats and bran' },
-    ],
-    bio: 'The looser the program got, the better Jeff Emig fit. Only in the late \'90s could a Supercross champion step onto the set of a cult moto film, holding a cereal box with his own name on it like it belonged there. Emig moved through Frezno Smooth cool, calm, and fully aware of the joke, never breaking character, never overplaying it. With a smirk that said oats and bran, he became the straight face inside moto satire, turning a fake product into a real moment. The movie split the moto media — praised by some, dismissed by others — but the image cut through all of it. Emig-O\'s outlived the debate, slipping into Moto Nineties folklore where explanation was never required. Fame didn\'t ask for context — it handed him a box and told him to act natural.',
-    partyFact: 'You didn\'t have to like the movie to remember the cereal. The pit board shot was filmed during an actual moto at the 1997 Steel City.',
-  },
-  {
-    slug: 'pastrana',
-    name: 'Travis Pastrana',
-    nickname: '"199"',
-    number: '199',
-    storyTitle: 'The Bay Bomber of \'99',
-    stats: [
-      { label: 'Hometown',   value: 'Davidsonville, MD' },
-      { label: 'Ride',       value: 'Suzuki RM125, fueled by blind optimism and the confidence of a fearless 15-year-old' },
-      { label: 'Risk Level', value: '"Hold my Capri Sun."' },
-    ],
-    bio: 'The best $10,000 Travis Pastrana ever lost (spent?) happened in the summer of 1999 when he attempted to backflip his RM125 into the San Francisco Bay, a rebellious move even in the alt world of action sports. The city gave a huge fine. ESPN never aired the clip, but the footage spilled from videos and Pastrana still cashes dividends from the move\'s impact. A factory-supported phenom not even old enough to race Pro Motocross, Pastrana was already upstaging the athletes he was preparing to race. The only true dual SX/MX + FMX threat, Pastrana chose freestyle when a pro racing career was a wide open option. That day on The Bay, FMX stopped flirting with insanity and fully moved in with it. The sport never looked back.',
-    partyFact: 'Pastrana did his run with Chuck Berry\'s "Johnny B. Goode" playing on the PA system. He loved leaning hard into the clean-cut, all-American good-kid image. Then he redefined what "good behavior" looked like on a dirt bike.',
-  },
-  {
-    slug: 'hart',
-    name: 'Carey Hart',
-    nickname: '"Hart Attack"',
-    number: '13',
-    storyTitle: 'The Hart Attack',
-    stats: [
-      { label: 'Hometown',  value: 'Las Vegas' },
-      { label: 'Ride',      value: 'Honda CR250' },
-      { label: 'Signature', value: 'Fully extended superman seat grab' },
-      { label: 'Moment',    value: '2000 Gravity Games' },
-    ],
-    bio: 'When you grow up doing homework by flashlight and shoveling asphalt for extra money, you learn work ethic early. Carey Hart calls himself "a tattooed scumbag from Las Vegas," but he had the work ethic — and the party vibe — needed to help push the struggling sport of FMX into the mainstream. When the hard realities of a traditional racing career didn\'t materialize, Hart didn\'t walk away. He dove into the emerging world of freestyle motocross and helped drag FMX out of VCRs and into the spotlight by jumping first, showing up first, and taking risks no one else was willing — or even thought possible. Carey Hart was a series of firsts. The first contest course was built by him and his dad. He was the first portable ramp test dummy. The first to expose freestyle to the punk crowd through the Warped Tour. And at the 2000 Gravity Games, the first to prove a backflip could be landed — advancing the sport to a new level. Hart proved freestyle wasn\'t a sideshow; it was something to be taken seriously — and it\'s kept growing ever since.',
-    partyFact: 'Hart was inches away from becoming an accountant.',
-  },
-  {
-    slug: 'carmichael',
-    name: 'Ricky Carmichael',
-    nickname: '"The GOAT"',
-    number: '4',
-    storyTitle: 'The Fun Killer',
-    stats: [
-      { label: 'Hometown',   value: 'Tallahassee, Florida' },
-      { label: 'Ride',       value: "Doesn't matter. He's still beating you on it." },
-      { label: 'Reputation', value: "Party's Over" },
-      { label: 'Moment',     value: '2000 Daytona Supercross win' },
-    ],
-    bio: "Ricky Carmichael didn't end the party. He simply didn't join it. Well, \"Meanie\" Jeanie didn't actually let him party (or even train) in SoCal. RC stayed grounded in Florida where he emptied 5-gallon jugs of race fuel faster than Bart Simpson could kill a Kwik-E-Mart Squishee. RC hated losing more than he liked winning and he didn't care about the \"scene.\" The era of style, vibes and late nights didn't gel with his discipline, structure and work ethic. He only cared about metrics that showed him getting better, every single day. When he dominated the 2000 Daytona Supercross, it felt like the beginning of the end. Not of racing, but an attitude. Some saw him as the bad guy, a killjoy. Turns out, he did know how to party — he just didn't do it with the competition.",
-    partyFact: '"Taking it easy" still meant another 30 +2.',
-  },
-  {
-    slug: 'hughes',
-    name: 'Ryan Hughes',
-    nickname: '"Ryno"',
-    number: '7',
-    storyTitle: 'The Warrior',
-    stats: [
-      { label: 'Hometown', value: 'Escondido, California' },
-      { label: 'Ride',     value: 'Kawasaki KX250 & KX125. Chains optional.' },
-      { label: 'Mindset',  value: 'Break before bend' },
-    ],
-    bio: "Ryan Hughes didn't race motocross. He waged war on it. Every moto was a battlefield, every lap a test of will, every injury something he refused to acknowledge. The race wasn't over even when the chain fell off his bike; he pushed to the finish. Uphill. Ryno rode with raw intensity, pushing past breaking points and carrying pain like fuel. A core member of the Moto Rat Pack, he brought grit, edge, and attitude to everything he lined up for. But he wasn't a one-note wonder; Hughes was dynamic, a thoughtful, funny spiritual seeker off the track, and a complete warrior on it. The nickname wasn't hype. It was a warning.",
-    partyFact: 'The only rider who made trainers nervous.',
-  },
-  {
-    slug: 'stephenson',
-    name: 'Denny Stephenson',
-    nickname: '"Debo"',
-    number: '11',
-    storyTitle: 'The Big Personality',
-    stats: [
-      { label: 'Hometown',      value: "Wherever the laughter's loudest" },
-      { label: 'Ride',          value: 'A 125 that screamed almost as loud as he did' },
-      { label: 'Claim to Fame', value: 'Talent + attitude + unlimited storytelling energy' },
-    ],
-    bio: "Denny Stephenson opened the 1990s with a dominating run through the 125SX East championship (8 wins!), kicking off the decade with a #1 plate before anyone had gotten a chance to know who Jeremy McGrath and Jeff Emig were. Then \"Debo\" became the life of the party. A walking highlight reel of speed, swagger and unprintable quotes, Stephenson was aggressive, sharp, and fearless on the bike. Off the bike? The dude could light up a pit party. Whether he was winning, talking smack, stirring up fun, or just holding court with riders and fans, Denny had a presence you couldn't ignore. He was a racer with charisma so strong it should've come with a warning label.",
-    partyFact: 'If you hung out with Denny, you woke up with stories... and maybe a headache.',
-  },
+  { slug: 'pastrana',    name: 'Travis Pastrana'    },
+  { slug: 'hughes',      name: 'Ryan Hughes'        },
+  { slug: 'carmichael',  name: 'Ricky Carmichael'   },
+  { slug: 'antunez',     name: 'Buddy Antunez'      },
+  { slug: 'mcgrath',     name: 'Jeremy McGrath'     },
+  { slug: 'emig',        name: 'Jeff Emig'          },
+  { slug: 'supermac',    name: 'Supermac McGrath'   },
+  { slug: 'hart',        name: 'Carey Hart'         },
+  { slug: 'lawrence',    name: 'Phil Lawrence'      },
+  { slug: 'stephenson',  name: 'Denny Stephenson'   },
+  { slug: 'us-open',     name: '1999 US Open'       },
+  { slug: 'fro-fans',    name: 'Fro Fans'           },
+  { slug: 'crusty',      name: 'Crusty Demons'      },
+  { slug: 'club-rubber', name: 'Club Rubber'        },
+  { slug: 'havasu',      name: 'Lake Havasu'        },
+  { slug: 'button',      name: 'Jimmy Button'       },
+  { slug: 'launi',       name: 'Launi'              },
+  { slug: 'steel-roots', name: 'Steel Roots'        },
+  { slug: 'albrecht',    name: 'Jeremy Albrecht'    },
+  { slug: 'mc-vs-fro',   name: 'MC vs FRO'          },
+  { slug: 'norfolk',     name: 'Skip Norfolk'       },
+  { slug: 'des-nations', name: 'Des Nations 1996'   },
+  { slug: '1997',        name: '1997'               },
 ];
 ---
 
 <Layout title="The Riders — Moto Nineties">
 
-  <!-- ── HEADER ────────────────────────────────────────────────────────────── -->
-  <section class="pt-32 pb-12 px-5 bg-ink">
-    <div class="max-w-4xl mx-auto">
-      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">Hi Flyers</p>
-      <h1 class="font-display text-5xl sm:text-7xl uppercase text-paper leading-none">
-        The<br/><span class="text-red">Riders.</span>
-      </h1>
-      <span class="red-rule mt-6 block"></span>
-    </div>
-  </section>
+  <!-- ── PAGE WRAPPER with background ─────────────────────────────────────── -->
+  <div class="relative">
+    <img
+      src="/images/BlackScratch.jpg"
+      alt=""
+      id="riders-bg"
+      class="absolute inset-0 w-full h-full object-cover pointer-events-none"
+      aria-hidden="true"
+    />
 
-  <!-- ── CARD GRID ─────────────────────────────────────────────────────────── -->
-  <section class="px-5 pb-20 bg-ink">
-    <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" id="card-grid">
-      {riders.map((rider) => (
-        <button
-          class="card-btn text-left group"
-          data-slug={rider.slug}
-          aria-label={`View ${rider.name}`}
-        >
-          <div class="relative overflow-hidden" style="aspect-ratio: 2.5 / 3.5;">
-            <img
-              src={`/images/cards/${rider.slug}-front.png`}
-              alt={rider.name}
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <!-- Hover reveal -->
-            <div class="absolute inset-0 bg-ink/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-              <span class="font-display text-xs uppercase tracking-widest text-paper leading-none">
-                View Profile
-              </span>
+    <!-- ── HEADER ──────────────────────────────────────────────────────────── -->
+    <section class="relative pt-32 pb-12 px-5">
+      <div class="max-w-4xl mx-auto">
+        <p id="riders-eyebrow" class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">Hi Flyers</p>
+        <h1 id="riders-headline" class="font-display text-5xl sm:text-7xl uppercase text-paper leading-none">
+          The<br/><span id="riders-red" class="text-red">Riders.</span>
+        </h1>
+        <span id="riders-rule" class="red-rule mt-6 block"></span>
+      </div>
+    </section>
+
+    <!-- ── CARD GRID ────────────────────────────────────────────────────────── -->
+    <section class="relative px-5 pb-20">
+      <div class="max-w-4xl mx-auto grid grid-cols-3 gap-4 sm:gap-6" id="card-grid">
+        {riders.map((rider) => (
+          <button
+            class="card-btn text-left group"
+            data-slug={rider.slug}
+            aria-label={`View ${rider.name}`}
+          >
+            <div class="relative overflow-hidden" style="aspect-ratio: 2.5 / 3.5;">
+              <img
+                src={`/images/cards/${rider.slug}-front.png`}
+                alt={rider.name}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" style="background: rgba(239, 167, 59, 0.9);">
+                <span style="font-family: 'Permanent Marker', cursive; color: #080808; font-size: 1.1rem;">
+                  View Profile
+                </span>
+              </div>
             </div>
-          </div>
-          <p class="mt-2 font-display text-xs uppercase tracking-widest text-smoke truncate group-hover:text-paper transition-colors duration-200">
-            {rider.name}
-          </p>
-        </button>
-      ))}
-    </div>
-    <p class="text-center text-smoke text-xs font-sans mt-8 tracking-widest uppercase">
-      Select a rider
-    </p>
-  </section>
+            <p class="mt-2 font-display text-xs uppercase tracking-widest text-smoke truncate group-hover:text-paper transition-colors duration-200">
+              {rider.name}
+            </p>
+          </button>
+        ))}
+      </div>
+      <p class="text-center text-smoke text-xs font-sans mt-8 tracking-widest uppercase">
+        Select a rider
+      </p>
+    </section>
+  </div><!-- end page wrapper -->
 
   <!-- ── RIDER OVERLAY ──────────────────────────────────────────────────────── -->
   <div
@@ -160,53 +92,41 @@ const riders = [
     aria-modal="true"
     aria-label="Rider profile"
   >
-    <!-- Backdrop -->
     <div id="overlay-backdrop" class="absolute inset-0"></div>
 
-    <!-- Close button -->
     <button id="overlay-close" aria-label="Close">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
         <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
     </button>
 
-    <!-- Content -->
     <div id="overlay-content">
 
-      <!-- Card image -->
       <div id="overlay-card-wrap">
         <img id="overlay-card-img" src="" alt="" />
       </div>
 
-      <!-- Text -->
       <div id="overlay-text">
-
         <p id="overlay-story-title"></p>
-
         <div id="overlay-name-block">
           <h2 id="overlay-name"></h2>
           <p id="overlay-nickname"></p>
         </div>
-
         <span class="red-rule block" style="margin-bottom: 1.5rem;"></span>
-
         <dl id="overlay-stats"></dl>
-
         <p id="overlay-bio"></p>
-
         <div id="overlay-party-fact-wrap">
           <p id="overlay-party-label">Party Fact</p>
           <p id="overlay-party-text"></p>
         </div>
-
       </div>
+
     </div>
   </div>
 
 </Layout>
 
 <style>
-  /* ── Card buttons ──────────────────────────────────────────────────────── */
   .card-btn {
     background: none;
     border: none;
@@ -216,7 +136,6 @@ const riders = [
     width: 100%;
   }
 
-  /* ── Overlay shell ─────────────────────────────────────────────────────── */
   #rider-overlay {
     position: fixed;
     inset: 0;
@@ -225,8 +144,6 @@ const riders = [
     align-items: center;
     justify-content: center;
     padding: clamp(1rem, 4vw, 2.5rem);
-
-    /* Hidden state */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease-out;
@@ -237,12 +154,10 @@ const riders = [
     pointer-events: all;
   }
 
-  /* Backdrop */
   #overlay-backdrop {
     background: rgba(8, 8, 8, 0.92);
   }
 
-  /* Close button */
   #overlay-close {
     position: absolute;
     top: clamp(1rem, 3vw, 1.75rem);
@@ -260,7 +175,6 @@ const riders = [
     color: rgba(240, 235, 227, 0.9);
   }
 
-  /* Content grid */
   #overlay-content {
     position: relative;
     z-index: 10;
@@ -271,8 +185,6 @@ const riders = [
     max-width: 900px;
     max-height: calc(100svh - 4rem);
     overflow-y: auto;
-
-    /* Slide-up on open */
     transform: translateY(24px);
     transition: transform 0.28s ease-out;
   }
@@ -287,11 +199,6 @@ const riders = [
       align-items: start;
       overflow-y: visible;
     }
-  }
-
-  /* Card image */
-  #overlay-card-wrap {
-    flex-shrink: 0;
   }
 
   #overlay-card-img {
@@ -312,12 +219,10 @@ const riders = [
     }
   }
 
-  /* Text column */
   #overlay-text {
     padding-bottom: 2rem;
   }
 
-  /* Story title */
   #overlay-story-title {
     font-family: 'Anton', sans-serif;
     font-size: 0.65rem;
@@ -327,7 +232,6 @@ const riders = [
     margin: 0 0 0.75rem;
   }
 
-  /* Name */
   #overlay-name {
     font-family: 'Anton', sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
@@ -337,21 +241,28 @@ const riders = [
     margin: 0 0 0.25rem;
   }
 
-  /* Nickname */
   #overlay-nickname {
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.35rem);
-    text-transform: uppercase;
-    color: rgba(240, 235, 227, 0.4);
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: #efa73b;
     margin: 0 0 1.25rem;
   }
 
-  /* Stats */
+  #overlay-nickname:empty {
+    display: none;
+    margin: 0;
+  }
+
   #overlay-stats {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0.4rem 1.25rem;
     margin: 0 0 1.5rem;
+  }
+
+  #overlay-stats:empty {
+    display: none;
+    margin: 0;
   }
 
   #overlay-stats dt {
@@ -373,7 +284,6 @@ const riders = [
     line-height: 1.5;
   }
 
-  /* Bio */
   #overlay-bio {
     font-family: 'Inter', sans-serif;
     font-size: 0.875rem;
@@ -383,7 +293,6 @@ const riders = [
     max-width: 52ch;
   }
 
-  /* Party fact */
   #overlay-party-fact-wrap {
     border: 1px solid rgba(240, 235, 227, 0.08);
     background: rgba(240, 235, 227, 0.03);
@@ -408,7 +317,6 @@ const riders = [
     margin: 0;
   }
 
-  /* Scrollbar (overlay on mobile) */
   #overlay-content {
     scrollbar-width: thin;
     scrollbar-color: rgba(240, 235, 227, 0.1) transparent;
@@ -420,7 +328,7 @@ const riders = [
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   gsap.registerPlugin(ScrollTrigger);
 
-  // ── Rider data (mirrors frontmatter — JS needs it at runtime) ─────────────
+  // ── Rider data ────────────────────────────────────────────────────────────
   const RIDERS: Record<string, {
     name: string;
     nickname: string;
@@ -429,6 +337,55 @@ const riders = [
     bio: string;
     partyFact: string | null;
   }> = {
+    pastrana: {
+      name: 'Travis Pastrana',
+      nickname: '"199"',
+      storyTitle: "The Bay Bomber of '99",
+      stats: [
+        { label: 'Hometown',   value: 'Davidsonville, MD' },
+        { label: 'Ride',       value: 'Suzuki RM125, fueled by blind optimism and the confidence of a fearless 15-year-old' },
+        { label: 'Risk Level', value: '"Hold my Capri Sun."' },
+      ],
+      bio: "The best $10,000 Travis Pastrana ever lost (spent?) happened in the summer of 1999 when he attempted to backflip his RM125 into the San Francisco Bay, a rebellious move even in the alt world of action sports. The city gave a huge fine. ESPN never aired the clip, but the footage spilled from videos and Pastrana still cashes dividends from the move's impact. A factory-supported phenom not even old enough to race Pro Motocross, Pastrana was already upstaging the athletes he was preparing to race. The only true dual SX/MX + FMX threat, Pastrana chose freestyle when a pro racing career was a wide open option. That day on The Bay, FMX stopped flirting with insanity and fully moved in with it. The sport never looked back.",
+      partyFact: "Pastrana did his run with Chuck Berry's \"Johnny B. Goode\" playing on the PA system. He loved leaning hard into the clean-cut, all-American good-kid image. Then he redefined what \"good behavior\" looked like on a dirt bike.",
+    },
+    hughes: {
+      name: 'Ryan Hughes',
+      nickname: '"Ryno"',
+      storyTitle: 'The Warrior',
+      stats: [
+        { label: 'Hometown', value: 'Escondido, California' },
+        { label: 'Ride',     value: 'Kawasaki KX250 & KX125. Chains optional.' },
+        { label: 'Mindset',  value: 'Break before bend' },
+      ],
+      bio: "Ryan Hughes didn't race motocross. He waged war on it. Every moto was a battlefield, every lap a test of will, every injury something he refused to acknowledge. The race wasn't over even when the chain fell off his bike; he pushed to the finish. Uphill. Ryno rode with raw intensity, pushing past breaking points and carrying pain like fuel. A core member of the Moto Rat Pack, he brought grit, edge, and attitude to everything he lined up for. But he wasn't a one-note wonder; Hughes was dynamic, a thoughtful, funny spiritual seeker off the track, and a complete warrior on it. The nickname wasn't hype. It was a warning.",
+      partyFact: 'The only rider who made trainers nervous.',
+    },
+    carmichael: {
+      name: 'Ricky Carmichael',
+      nickname: '"The GOAT"',
+      storyTitle: 'The Fun Killer',
+      stats: [
+        { label: 'Hometown',   value: 'Tallahassee, Florida' },
+        { label: 'Ride',       value: "Doesn't matter. He's still beating you on it." },
+        { label: 'Reputation', value: "Party's Over" },
+        { label: 'Moment',     value: '2000 Daytona Supercross win' },
+      ],
+      bio: "Ricky Carmichael didn't end the party. He simply didn't join it. Well, \"Meanie\" Jeanie didn't actually let him party (or even train) in SoCal. RC stayed grounded in Florida where he emptied 5-gallon jugs of race fuel faster than Bart Simpson could kill a Kwik-E-Mart Squishee. RC hated losing more than he liked winning and he didn't care about the \"scene.\" The era of style, vibes and late nights didn't gel with his discipline, structure and work ethic. He only cared about metrics that showed him getting better, every single day. When he dominated the 2000 Daytona Supercross, it felt like the beginning of the end. Not of racing, but an attitude. Some saw him as the bad guy, a killjoy. Turns out, he did know how to party — he just didn't do it with the competition.",
+      partyFact: '"Taking it easy" still meant another 30 +2.',
+    },
+    antunez: {
+      name: 'Buddy Antunez',
+      nickname: '"Budman"',
+      storyTitle: '',
+      stats: [
+        { label: 'Hometown', value: 'Southern California' },
+        { label: 'Ride',     value: '125s and 250s (on the same night!)' },
+        { label: 'Talent',   value: 'Speed, confidence, and just enough mischief' },
+      ],
+      bio: '"Budman" wasn\'t just a fun nickname for Buddy Antunez; he was literally the most likeable guy in the pits. Still is. As part of the Moto Rat Pack, he blended speed with personality and never lost credibility. Even though Antunez started 200 Supercross and Pro Motocross events in his career, his biggest racing success came in Arenacross where he won five consecutive championships and over 100 main events.',
+      partyFact: 'Somehow fast, friendly, and still the center of the pits.',
+    },
     mcgrath: {
       name: 'Jeremy McGrath',
       nickname: '"Showtime"',
@@ -454,17 +411,17 @@ const riders = [
       bio: "The looser the program got, the better Jeff Emig fit. Only in the late '90s could a Supercross champion step onto the set of a cult moto film, holding a cereal box with his own name on it like it belonged there. Emig moved through Frezno Smooth cool, calm, and fully aware of the joke, never breaking character, never overplaying it. With a smirk that said oats and bran, he became the straight face inside moto satire, turning a fake product into a real moment. The movie split the moto media — praised by some, dismissed by others — but the image cut through all of it. Emig-O's outlived the debate, slipping into Moto Nineties folklore where explanation was never required. Fame didn't ask for context — it handed him a box and told him to act natural.",
       partyFact: "You didn't have to like the movie to remember the cereal. The pit board shot was filmed during an actual moto at the 1997 Steel City.",
     },
-    pastrana: {
-      name: 'Travis Pastrana',
-      nickname: '"199"',
-      storyTitle: "The Bay Bomber of '99",
+    supermac: {
+      name: 'Jeremy McGrath',
+      nickname: '"Supermac"',
+      storyTitle: '',
       stats: [
-        { label: 'Hometown',   value: 'Davidsonville, MD' },
-        { label: 'Ride',       value: 'Suzuki RM125, fueled by blind optimism and the confidence of a fearless 15-year-old' },
-        { label: 'Risk Level', value: '"Hold my Capri Sun."' },
+        { label: 'Hometown',    value: 'The 1990s' },
+        { label: 'Ride',        value: 'Whatever got him there first' },
+        { label: 'Party Skill', value: 'Convincing his competition to party with him' },
       ],
-      bio: "The best $10,000 Travis Pastrana ever lost (spent?) happened in the summer of 1999 when he attempted to backflip his RM125 into the San Francisco Bay, a rebellious move even in the alt world of action sports. The city gave a huge fine. ESPN never aired the clip, but the footage spilled from videos and Pastrana still cashes dividends from the move's impact. A factory-supported phenom not even old enough to race Pro Motocross, Pastrana was already upstaging the athletes he was preparing to race. The only true dual SX/MX + FMX threat, Pastrana chose freestyle when a pro racing career was a wide open option. That day on The Bay, FMX stopped flirting with insanity and fully moved in with it. The sport never looked back.",
-      partyFact: 'Pastrana did his run with Chuck Berry\'s "Johnny B. Goode" playing on the PA system. He loved leaning hard into the clean-cut, all-American good-kid image. Then he redefined what "good behavior" looked like on a dirt bike.',
+      bio: "Jeremy McGrath was the guy most riders followed (figuratively AND literally) throughout the '90s. He set the pace, the tone and the trends. Fun came back to the top of the sport because he put it there. A Gen X party vibe flowed downhill from MC through the entire industry. And that might have been McGrath's secret power; he kept his friends close but his competition even closer by making sure they were invited to the parties. If MC was bonging beers and riding Jet Skis at Lake Havasu AND still winning, then that must have been the secret sauce, right? While others partied like McGrath, MC was still training harder than all of them. The beer bong was the profile; the work stayed invisible. That balance — serious discipline wrapped in real fun — is what made him untouchable. The '90s felt fun because the best rider in the world made dominance look easy.",
+      partyFact: 'The vibe was real. The work ethic was not optional.',
     },
     hart: {
       name: 'Carey Hart',
@@ -479,30 +436,17 @@ const riders = [
       bio: 'When you grow up doing homework by flashlight and shoveling asphalt for extra money, you learn work ethic early. Carey Hart calls himself "a tattooed scumbag from Las Vegas," but he had the work ethic — and the party vibe — needed to help push the struggling sport of FMX into the mainstream. When the hard realities of a traditional racing career didn\'t materialize, Hart didn\'t walk away. He dove into the emerging world of freestyle motocross and helped drag FMX out of VCRs and into the spotlight by jumping first, showing up first, and taking risks no one else was willing — or even thought possible. Carey Hart was a series of firsts. The first contest course was built by him and his dad. He was the first portable ramp test dummy. The first to expose freestyle to the punk crowd through the Warped Tour. And at the 2000 Gravity Games, the first to prove a backflip could be landed — advancing the sport to a new level. Hart proved freestyle wasn\'t a sideshow; it was something to be taken seriously — and it\'s kept growing ever since.',
       partyFact: 'Hart was inches away from becoming an accountant.',
     },
-    carmichael: {
-      name: 'Ricky Carmichael',
-      nickname: '"The GOAT"',
-      storyTitle: 'The Fun Killer',
+    lawrence: {
+      name: 'Phil Lawrence',
+      nickname: '"Factory Phil"',
+      storyTitle: '"Factory Phil"',
       stats: [
-        { label: 'Hometown',   value: 'Tallahassee, Florida' },
-        { label: 'Ride',       value: "Doesn't matter. He's still beating you on it." },
-        { label: 'Reputation', value: "Party's Over" },
-        { label: 'Moment',     value: '2000 Daytona Supercross win' },
+        { label: 'Hometown',   value: 'Wherever the bikes are clean and the vibes are right' },
+        { label: 'Ride',       value: 'Whatever the factory just polished' },
+        { label: 'Superpower', value: 'Effortless cool + unexpected speed' },
       ],
-      bio: "Ricky Carmichael didn't end the party. He simply didn't join it. Well, \"Meanie\" Jeanie didn't actually let him party (or even train) in SoCal. RC stayed grounded in Florida where he emptied 5-gallon jugs of race fuel faster than Bart Simpson could kill a Kwik-E-Mart Squishee. RC hated losing more than he liked winning and he didn't care about the \"scene.\" The era of style, vibes and late nights didn't gel with his discipline, structure and work ethic. He only cared about metrics that showed him getting better, every single day. When he dominated the 2000 Daytona Supercross, it felt like the beginning of the end. Not of racing, but an attitude. Some saw him as the bad guy, a killjoy. Turns out, he did know how to party — he just didn't do it with the competition.",
-      partyFact: '"Taking it easy" still meant another 30 +2.',
-    },
-    hughes: {
-      name: 'Ryan Hughes',
-      nickname: '"Ryno"',
-      storyTitle: 'The Warrior',
-      stats: [
-        { label: 'Hometown', value: 'Escondido, California' },
-        { label: 'Ride',     value: 'Kawasaki KX250 & KX125. Chains optional.' },
-        { label: 'Mindset',  value: 'Break before bend' },
-      ],
-      bio: "Ryan Hughes didn't race motocross. He waged war on it. Every moto was a battlefield, every lap a test of will, every injury something he refused to acknowledge. The race wasn't over even when the chain fell off his bike; he pushed to the finish. Uphill. Ryno rode with raw intensity, pushing past breaking points and carrying pain like fuel. A core member of the Moto Rat Pack, he brought grit, edge, and attitude to everything he lined up for. But he wasn't a one-note wonder; Hughes was dynamic, a thoughtful, funny spiritual seeker off the track, and a complete warrior on it. The nickname wasn't hype. It was a warning.",
-      partyFact: 'The only rider who made trainers nervous.',
+      bio: "They called him \"Factory\" Phil because it didn't matter what team, bike, or level of support he had, Phil Lawrence looked straight off the factory floor. He was a key member of the Moto Rat Pack; he had effortless cool, sharp style, and a knack for being in the right place at the right time. In the heart of the '90s, he helped define freeride before it even had a name. In 1996, riding for a privateer team, he was a top five premier class Supercross rider and finished 5th in the championship. Off the track, Phil was the ultimate wingman, voted best in the role because he never forced the moment and never needed the spotlight to control it. He partied hard when the era demanded it then, quietly, changed gears when enough was enough. Phil wasn't just part of the scene — he helped set the tone, then showed you could walk away without losing who you were.",
+      partyFact: "Don't ask him to relive the '90s. The Vault is sealed.",
     },
     stephenson: {
       name: 'Denny Stephenson',
@@ -514,44 +458,178 @@ const riders = [
         { label: 'Claim to Fame', value: 'Talent + attitude + unlimited storytelling energy' },
       ],
       bio: "Denny Stephenson opened the 1990s with a dominating run through the 125SX East championship (8 wins!), kicking off the decade with a #1 plate before anyone had gotten a chance to know who Jeremy McGrath and Jeff Emig were. Then \"Debo\" became the life of the party. A walking highlight reel of speed, swagger and unprintable quotes, Stephenson was aggressive, sharp, and fearless on the bike. Off the bike? The dude could light up a pit party. Whether he was winning, talking smack, stirring up fun, or just holding court with riders and fans, Denny had a presence you couldn't ignore. He was a racer with charisma so strong it should've come with a warning label.",
-      partyFact: "If you hung out with Denny, you woke up with stories... and maybe a headache.",
+      partyFact: 'If you hung out with Denny, you woke up with stories... and maybe a headache.',
+    },
+    'us-open': {
+      name: '1999 US Open',
+      nickname: '',
+      storyTitle: 'The Battle of the Eras',
+      stats: [
+        { label: 'Location',   value: 'MGM Grand, Las Vegas' },
+        { label: 'Vibe',       value: 'Smoke machines, slot machines, unfinished business' },
+        { label: 'Main Event', value: 'Emig vs. Carmichael — Old Guard vs. New Heat' },
+      ],
+      bio: "Jeff Emig was supposed to be washed up, done. Six weeks after being fired by Kawasaki (and two and half years since his last Supercross win), Emig showed up for the 1999 US Open of Supercross on a privateer Yamaha and walked away with the win and $100,000 prize. Emig, the veteran with championship scars, lined up against future champion Ricky Carmichael. Emig rode like a man with something to prove — smooth, calculated, dripping with swagger — while Carmichael charged with his trademark bulldog fury. When Emig crossed the line ahead of the future GOAT, the MGM arena erupted. Emig wasn't done yet and he closed out the 1990s with one last victory.",
+      partyFact: 'If you listened closely, you could hear the MGM slot machines cheering.',
+    },
+    'fro-fans': {
+      name: 'Fro Fans',
+      nickname: '',
+      storyTitle: 'The Afro-Wig Army',
+      stats: [
+        { label: 'Location', value: 'Any stadium or outdoor track with good nachos' },
+        { label: 'Look',     value: 'Monster-sized Afros' },
+        { label: 'Purpose',  value: 'Hype. Pure, chaotic hype' },
+      ],
+      bio: "Long before social media and spectator activation zones, Fro Fans found each other through hairdos. Don an oversized afro wig (shirt optional) and head straight for the fence line; your people were already waiting for you. The wigs (bigger the better) paid homage to Jeff \"Fro\" Emig's legendary nickname that started as a joke from Denny Stephenson. Fro fans brought unique energy to the races, jumping, screaming, chanting \"FRO\" when their icon was on the track. They were camera magnets, and Emig fed off the energy. The Fro fans became a symbol of personality, swagger, and that cool-kid energy Emig brought to the sport.",
+      partyFact: 'Wearing the fro increased chances of meeting Jeff Emig by 47%.',
+    },
+    crusty: {
+      name: 'Crusty Demons Film Crew',
+      nickname: '',
+      storyTitle: '',
+      stats: [
+        { label: 'Location', value: 'So-Cal ride spots, and later... the world' },
+        { label: 'Gear',     value: 'Hi-8 cameras, duct tape, ropes, your chick' },
+        { label: 'Mission',  value: 'Hold my beer' },
+      ],
+      bio: "The \"Crusty Demons of Dirt\" film crew brought the fun, the cameras and all the bad ideas; filming all the factory pros and dirt bike maniacs such as Mike Metzger, Linkogle, Hart, Seth Enslow, and Brian Deegan — all willingly threw down. The result wasn't just a series of riding films on VHS. It was the fuel for the explosion of Freestyle Motocross and the nightmare for the race industry that wanted these videos to fade into the sunset as fast as possible. Crusty's crews rolled tape in all conditions, with hangovers, and broke every rule they could find in the name of capturing epic freeride shots. Shoot first, run from the cops later. Without the brave (deranged?) Crusty film crew, freestyle might have stayed a rumor. With them, it became a revolution — and their creation melted a lot of Mylar.",
+      partyFact: 'Crew was allegedly paid in gas money, high-fives, and anything left in the cooler.',
+    },
+    'club-rubber': {
+      name: 'Club Rubber',
+      nickname: '',
+      storyTitle: '',
+      stats: [
+        { label: 'Profession',    value: 'Nightclub / pressure-release system / cultural collision point' },
+        { label: 'Tools',         value: 'Theme nights, VIP rooms, strobe lights, scant clothing' },
+        { label: 'Claim to Fame', value: 'The Monday night reset that became mandatory for the pro moto world' },
+      ],
+      bio: '"What happens at Club Rubber stays at Club Rubber." What started as a party quickly turned into a ritual. Club Rubber landed perfectly in the race week rhythm: Sunday motos finished, Monday night detonated, Tuesday back to work. For the top riders in the world, it was the release valve they didn\'t know they needed. VIP rooms spilled into the main floor, themes blurred the lines between costume and chaos and discretion was never part of the business model. Built by Damian Sanders, who had deep roots in action sports culture, Club Rubber pulled motocross into a bigger orbit. Riders crossed paths with out-of-the-industry legends, ideas traveled faster and the energy bled straight back into racing. It wasn\'t a distraction — it was part of the grind.',
+      partyFact: "If you raced on Sunday and didn't end up there Monday, people assumed you weren't really part of it.",
+    },
+    havasu: {
+      name: 'Lake Havasu',
+      nickname: '',
+      storyTitle: 'Where Racers Left the Race',
+      stats: [
+        { label: 'Profession',    value: 'Desert playground' },
+        { label: 'Tools',         value: 'Speedboats, sunburn, tequila, fried brain cells' },
+        { label: 'Claim to Fame', value: 'The off-week destination where party pros shut down' },
+      ],
+      bio: "A break in the schedule meant riders broke for Arizona's Lake Havasu, a 19,000 acre reservoir in the Colorado River's path. The lake swallowed the paddock and the industry became anonymous for a few days. What happened there wasn't in the training manual; it was necessary. Boats packed in the coves, chaos reigned the night and revelers got just enough sleep to repeat the next day. Havasu was known for debauchery and fun in equal measure. It didn't ruin seasons, it reset them. If you couldn't handle Havasu, the grind eventually handled you.",
+      partyFact: 'Most people remember the stories. The riders remember why they survived the season.',
+    },
+    button: {
+      name: 'Jimmy Button',
+      nickname: '"Buttonfly"',
+      storyTitle: '',
+      stats: [
+        { label: 'Hometown',   value: 'California cool zone' },
+        { label: 'Ride',       value: 'Factory gear and personality' },
+        { label: 'Superpower', value: 'Balancing speed with an actual life' },
+      ],
+      bio: "Jimmy Button was a rare breed, a legit contender who could throw down laps all day and still show up with enough energy to hit a party without looking like he crawled out of a sand wash. Button had polish, professionalism and media chops but enough rebel in him to slide into the '90s chaos. He carried himself like a factory guy, trained hard, was a fierce competitor, and still managed to be the dude everyone wanted around after the races. He was a smooth talker, sharp dresser and quick rider. Button brought a lightness to a sport full of intensity and egos. He could battle with the best and laugh with the rest.",
+      partyFact: 'Could go from podium interview to post-race dance floor in under five minutes.',
+    },
+    launi: {
+      name: 'Launi',
+      nickname: '',
+      storyTitle: 'The Queen of the Frosted Tips',
+      stats: [
+        { label: 'Profession',    value: 'Moto hairstylist / pit-area miracle worker' },
+        { label: 'Tools',         value: 'Bleach, foil, gossip and a prayer' },
+        { label: 'Claim to Fame', value: 'Responsible for 78% of \'90s profile photos looking "siiiiick"' },
+      ],
+      bio: "Before riders had nutritionists, sports psychologists, or social media managers they had Launi, the unofficial stylist of the entire damn motocross scene. If you saw frosted tips, spiky bangs or that iconic \"just enough bleach to ruin your pillowcase\" look, chances are Launi was the artist. In her little SoCal salon, Launi kept everyone looking like they lived in a Mountain Dew commercial, and the industry ran on her magic: haircuts, laughs, rumors, touch-ups, and emergency bleach jobs before pre-season team photoshoots. Launi wasn't just a stylist, she was a curator. You didn't just get a haircut from Launi; you got confidence, attitude, and a look that screamed 1999 forever.",
+      partyFact: 'Her frosted tips were so influential, even privateers suddenly had main-stage energy.',
+    },
+    'steel-roots': {
+      name: 'Filming of Steel Roots',
+      nickname: '',
+      storyTitle: '',
+      stats: [],
+      bio: "Tell us it's the late 1990s without telling us it's the late 1990s; \"Steel Roots\" explains all. Reigning Supercross champion Jeremy McGrath severed ties with the company that wanted to squash his fun and went all-in with this film that showed his true self. From the makers of \"Crusty Demons of Dirt\" and Lawrence \"Lew\" Lewis, \"Steel Roots\" was a 30-minute cinematic study of why MC was winning both on and off the track. Already cemented as the King of Supercross, McGrath goes on a freeriding tour to London, Mexico, Texas and all around SoCal with both friends and competitors. It was the last time moto fans ever got to see a Supercross champ this unleashed.",
+      partyFact: null,
+    },
+    albrecht: {
+      name: 'Jeremy Albrecht',
+      nickname: '"J-Bone"',
+      storyTitle: '',
+      stats: [
+        { label: 'Profession', value: 'Wrench' },
+        { label: 'Tools',      value: 'T-handles and spark plug wrenches' },
+      ],
+      bio: "With his cool attitude and optimism, \"J-Bone\" was the perfect partner for Jeff Emig because he was fun but level-headed enough to know when (and how) to get focused. In 1996, Kawasaki pulled the spanners for Emig from privateer-mechanic obscurity. Albrecht was a shy kid from Reche Canyon who initially hid from the ESPN TV cameras that roamed the mechanic's era. With Emig, he thrived and became a paddock trendsetter. Together at Kawasaki they tested every letter of the company's championship campaigns. Fueled by Emig-O's, Cokes and good times, Albrecht and Emig won 21 races and 3 championships together. Their very first win came at the legendary \"streak stopper\" at the 1995 St. Louis Supercross — Emig handed Albrecht the trophy after the race.",
+      partyFact: null,
+    },
+    'mc-vs-fro': {
+      name: 'MC vs FRO',
+      nickname: '',
+      storyTitle: '',
+      stats: [],
+      bio: "One of the sport's great rivalries, Jeremy McGrath and Jeff Emig squared off in nearly 200 Supercross and Pro Motocross series events through the 1990s and vied for 15 #1 plates against each other (combined, they won 12 of them!). It was NOT a friendly rivalry. \"He rides like a dick!\" McGrath once told a Cycle News reporter. Emig had a photo of McGrath in his gym, next to the speed bag: \"I f—in' hated the guy,\" he said. Which might explain this iconic 1997 \"put your dukes up\" ad from Shift/Fox.",
+      partyFact: null,
+    },
+    norfolk: {
+      name: 'Skip Norfolk',
+      nickname: '"Snewy"',
+      storyTitle: 'The Man Behind the Man',
+      stats: [
+        { label: 'Profession',    value: 'Mechanic / strategist / architect of domination' },
+        { label: 'Tools',         value: 'Wrenches, clear lens spectacles, main jets, timing sheets, instinct' },
+        { label: 'Claim to Fame', value: "Jeremy McGrath's right hand man (1991-1996)" },
+      ],
+      bio: "Before Supercross champions had data teams, crew chiefs, suspension techs and man friends, it had guys like Skip Norfolk, who did it all. Equal parts mechanic and strategist for Jeremy McGrath, he helped Superman fly. While the spotlight stayed on MC, \"Snewy\" sweated the details behind the scenes, making sure the King's steed ran fresh. Skip's own super power was how damn good he looked while doing it; the ESPN mics always found him in the mechanic's area and he became the ultimate trendsetter for all wannabe T-handle twirlers. As the wins stacked up, Skip didn't chase credit, but when Superman suffered the rare failure, Skip felt it was his fault. He was that kind of wingman.",
+      partyFact: 'Could get a CR250 fired up after sitting overnight in a box van in -27 degree temperatures.',
+    },
+    'des-nations': {
+      name: 'Des Nations 1996',
+      nickname: '',
+      storyTitle: '',
+      stats: [],
+      bio: "In 1996, Team USA's trio at the 50th annual Motocross des Nations was arguably the strongest team ever assembled, and they delivered a near-perfect day in Jerez, Spain. The Yanks dominated, winning all three motos and ending with 9 points in final scoring. Steve Lamson went (1-3) on a 125; Jeremy McGrath (1-1) on a 250, and Jeff Emig (3-5) on a KX500, a two-stroke demon he'd never ridden in his life. \"Mission accomplished,\" McGrath told Cycle News. \"We came over here and proved to everyone that we're still the best.\" Lamson wowed the crowd in practice by heel-clicking over a massive downhill quad, and Emig proved he wasn't scared of the 500 when he leaped over riders' heads. The Europeans whined that it wasn't the \"Supercross des Nations.\" The quad was bulldozed before the motos. For Emig, it was his 5th MXdN in a row and the fourth time he'd won his individual class.",
+      partyFact: 'The afterparty was pure Gen-X MX chaos and ended with McGrath ripping nac nacs on a horse statue.',
+    },
+    '1997': {
+      name: '1997',
+      nickname: '',
+      storyTitle: 'The Upside Down Year',
+      stats: [],
+      bio: "At the time, nothing made sense; Jeremy McGrath dropped a New Year's surprise and switched to Suzuki? Jeff Emig won more races than McGrath? Why does Doug Henry's Yamaha sound like that? Execution beat inevitability but bike changes mattered more than anyone wanted to admit at the time. Off the track, the parties raged harder, flashbulbs popped, cameras rolled and the 1990s hit their zenith. Winning still counted, but living loud became the proof. 1997 didn't change the direction of the sport. It showed how easily it could flip.",
+      partyFact: null,
     },
   };
 
   // ── DOM refs ──────────────────────────────────────────────────────────────
-  const overlay      = document.getElementById('rider-overlay')!;
-  const backdrop     = document.getElementById('overlay-backdrop')!;
-  const closeBtn     = document.getElementById('overlay-close')!;
-  const cardImg      = document.getElementById('overlay-card-img') as HTMLImageElement;
-  const storyTitle   = document.getElementById('overlay-story-title')!;
-  const nameEl       = document.getElementById('overlay-name')!;
-  const nicknameEl   = document.getElementById('overlay-nickname')!;
-  const statsEl      = document.getElementById('overlay-stats')!;
-  const bioEl        = document.getElementById('overlay-bio')!;
-  const partyWrap    = document.getElementById('overlay-party-fact-wrap')!;
-  const partyText    = document.getElementById('overlay-party-text')!;
+  const overlay     = document.getElementById('rider-overlay')!;
+  const closeBtn    = document.getElementById('overlay-close')!;
+  const cardImg     = document.getElementById('overlay-card-img') as HTMLImageElement;
+  const storyTitle  = document.getElementById('overlay-story-title')!;
+  const nameEl      = document.getElementById('overlay-name')!;
+  const nicknameEl  = document.getElementById('overlay-nickname')!;
+  const statsEl     = document.getElementById('overlay-stats')!;
+  const bioEl       = document.getElementById('overlay-bio')!;
+  const partyWrap   = document.getElementById('overlay-party-fact-wrap')!;
+  const partyText   = document.getElementById('overlay-party-text')!;
 
   // ── Open ──────────────────────────────────────────────────────────────────
   function openOverlay(slug: string) {
     const rider = RIDERS[slug];
     if (!rider) return;
 
-    // Populate
     cardImg.src = `/images/cards/${slug}-front.png`;
     cardImg.alt = rider.name;
-    storyTitle.textContent = rider.storyTitle;
-    nameEl.textContent = rider.name;
-    nicknameEl.textContent = rider.nickname;
+    storyTitle.textContent = rider.storyTitle || '';
+    nameEl.textContent     = rider.name;
+    nicknameEl.textContent = rider.nickname || '';
 
-    // Stats
     statsEl.innerHTML = rider.stats
       .map(s => `<dt>${s.label}</dt><dd>${s.value}</dd>`)
       .join('');
 
-    // Bio
     bioEl.textContent = rider.bio;
 
-    // Party fact
     if (rider.partyFact) {
       partyText.textContent = rider.partyFact;
       partyWrap.style.display = '';
@@ -559,7 +637,6 @@ const riders = [
       partyWrap.style.display = 'none';
     }
 
-    // Show
     overlay.classList.add('is-open');
     document.body.style.overflow = 'hidden';
     closeBtn.focus();
@@ -571,7 +648,7 @@ const riders = [
     document.body.style.overflow = '';
   }
 
-  // ── Event listeners ───────────────────────────────────────────────────────
+  // ── Events ────────────────────────────────────────────────────────────────
   document.querySelectorAll<HTMLButtonElement>('.card-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const slug = btn.dataset.slug;
@@ -580,22 +657,38 @@ const riders = [
   });
 
   closeBtn.addEventListener('click', closeOverlay);
-  backdrop.addEventListener('click', closeOverlay);
+  overlay.addEventListener('click', closeOverlay);
+  document.getElementById('overlay-content')!.addEventListener('click', e => e.stopPropagation());
 
   document.addEventListener('keydown', (e: KeyboardEvent) => {
     if (e.key === 'Escape') closeOverlay();
   });
 
-  // ── Staggered entrance ────────────────────────────────────────────────────
+  // ── Page load animations ──────────────────────────────────────────────────
+  gsap.fromTo('#riders-bg',
+    { scale: 1.07, transformOrigin: 'center center' },
+    { scale: 1, duration: 2.5, ease: 'power2.out' }
+  );
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  tl.from('#riders-eyebrow', { opacity: 0, y: 10, duration: 0.45 }, 0.3);
+  tl.from('#riders-headline', { opacity: 0, y: -48, duration: 0.65, ease: 'power4.out' }, 0.5);
+  tl.from('#riders-red', { opacity: 0, x: 24, duration: 0.5, ease: 'back.out(1.3)' }, 0.8);
+  tl.from('#riders-rule', { scaleX: 0, transformOrigin: 'left center', duration: 0.45, ease: 'power2.out' }, 1.0);
+
+  // ── Card deal-in ──────────────────────────────────────────────────────────
   gsap.from('.card-btn', {
     opacity: 0,
-    y: 40,
-    duration: 0.6,
-    stagger: 0.07,
-    ease: 'power2.out',
+    y: 60,
+    scale: 0.88,
+    rotation: () => gsap.utils.random(-5, 5),
+    duration: 0.65,
+    stagger: { amount: 0.45, from: 'start' },
+    ease: 'back.out(1.2)',
     scrollTrigger: {
       trigger: '#card-grid',
-      start: 'top 80%',
+      start: 'top 82%',
     },
   });
 </script>

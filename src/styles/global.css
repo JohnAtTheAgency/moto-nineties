@@ -6,10 +6,12 @@
   --color-ink:    #080808;
   --color-paper:  #f0ebe3;
   --color-smoke:  #9a9a9a;
+  --color-gold:   #efa73b;
 
   --font-display: 'Anton', sans-serif;
   --font-sans:    'Inter', sans-serif;
   --font-racing:  'RacingMarkRace', sans-serif;
+  --font-marker:  'Permanent Marker', cursive;
 }
 
 @font-face {
