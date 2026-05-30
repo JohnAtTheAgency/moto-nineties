@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <!-- Logo + tagline — centered -->
-    <div class="relative z-20 flex flex-col items-center text-center px-5 pt-6 md:pt-14 pb-20">
+    <div class="relative z-20 flex flex-col items-center text-center px-5 pt-6 md:pt-14 pb-20 md:pb-32">
       <img
         src="/images/Moto-Nineties-Full-Logo.png"
         alt="Moto Nineties"
@@ -98,7 +98,7 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- ── THE WAR — white section ───────────────────────────────────────────── -->
   <section class="relative bg-white" id="war-section">
-    <div class="max-w-5xl mx-auto px-5" style="padding-top: 5rem; padding-bottom: 6rem;">
+    <div class="max-w-5xl mx-auto px-5" style="padding-top: clamp(5rem, 10vw, 10rem); padding-bottom: 4rem;">
 
       <!-- Row 1: Headline — full width, centered, own line -->
       <div class="mb-5 text-center" id="war-headline-wrap">
@@ -110,10 +110,10 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Row 2: Image + text stacked vertically -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-3 items-center">
 
-        <!-- Image — full width -->
-        <div id="war-image">
+        <!-- Image — 3/4 on desktop, full width on mobile -->
+        <div class="md:col-span-3 md:-ml-5" id="war-image">
           <img
             src="/images/Moto-Nineties-McGrath-Emig-War-2.jpg"
             alt="McGrath vs Emig — It Was War"
@@ -121,8 +121,8 @@ import Layout from '../layouts/Layout.astro';
           />
         </div>
 
-        <!-- Copy -->
-        <div id="war-copy">
+        <!-- Copy — 1/4 on desktop -->
+        <div class="md:col-span-1" id="war-copy">
           <p class="font-display text-blue uppercase leading-snug mb-4" style="font-size: clamp(1.15rem, 1.9vw, 1.55rem);">
             In the late nineties, two riders transformed motocross into something else entirely — a spectacle, a soap opera, a war.
           </p>
