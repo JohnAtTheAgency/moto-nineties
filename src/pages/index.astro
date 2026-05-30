@@ -404,23 +404,31 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <script is:inline>
+  const SHEET_URL = 'https://script.google.com/a/macros/stateofthedesign.com/s/AKfycbwIaLe5YAU8B8okyk3p1CR93eUEcQgKEC6fx5iewMjbK3_qY0MtJ6og0cWyW0qaPHvp/exec';
+
+  function submitEmail(email, source, onSuccess) {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source }),
+    }).finally(onSuccess);
+  }
+
   function handleHeroEmail(e) {
     e.preventDefault();
     const email = e.target.email.value.trim();
-    // TODO: replace localStorage with Mailchimp / Klaviyo / backend endpoint
-    const stored = JSON.parse(localStorage.getItem('mn_emails') || '[]');
-    stored.push({ email, date: new Date().toISOString() });
-    localStorage.setItem('mn_emails', JSON.stringify(stored));
-    document.getElementById('hero-email-block').innerHTML =
-      '<p style="color:#f0ebe3;font-family:Inter,sans-serif;font-size:1rem;font-weight:500;">You\'re on the list. See you at the premiere.</p>';
+    submitEmail(email, 'hero', () => {
+      document.getElementById('hero-email-block').innerHTML =
+        '<p style="color:#f0ebe3;font-family:Inter,sans-serif;font-size:1rem;font-weight:500;">You\'re on the list. See you at the premiere.</p>';
+    });
   }
 
   function handleEmailSubmit(e) {
     e.preventDefault();
     const email = e.target.email.value.trim();
-    const stored = JSON.parse(localStorage.getItem('mn_emails') || '[]');
-    stored.push({ email, date: new Date().toISOString() });
-    localStorage.setItem('mn_emails', JSON.stringify(stored));
-    e.target.innerHTML = '<p style="color:#f0ebe3;font-family:Inter,sans-serif;font-size:0.875rem;">You\'re on the list. See you at the premiere.</p>';
+    submitEmail(email, 'footer', () => {
+      e.target.innerHTML = '<p style="color:#f0ebe3;font-family:Inter,sans-serif;font-size:0.875rem;">You\'re on the list. See you at the premiere.</p>';
+    });
   }
 </script>
