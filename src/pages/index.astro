@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <!-- Logo + tagline — centered -->
-    <div class="relative z-20 flex flex-col items-center text-center px-5 pt-14 pb-32">
+    <div class="relative z-20 flex flex-col items-center text-center px-5 pt-6 md:pt-14 pb-20">
       <img
         src="/images/Moto-Nineties-Full-Logo.png"
         alt="Moto Nineties"
@@ -86,7 +86,7 @@ import Layout from '../layouts/Layout.astro';
       src="/images/Moto-Nineties-Coming-Summer.png"
       alt=""
       class="absolute left-1/2 pointer-events-none z-30"
-      style="bottom: 0; transform: translateX(-50%) translateY(50%); max-width: 600px; width: 60%;"
+      style="bottom: 0; transform: translateX(-50%) translateY(50%); max-width: 1200px; width: 88%;"
       id="seam-tape"
     />
 
@@ -98,7 +98,7 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- ── THE WAR — white section ───────────────────────────────────────────── -->
   <section class="relative bg-white" id="war-section">
-    <div class="max-w-5xl mx-auto px-5" style="padding-top: 10rem; padding-bottom: 4rem;">
+    <div class="max-w-5xl mx-auto px-5" style="padding-top: 5rem; padding-bottom: 6rem;">
 
       <!-- Row 1: Headline — full width, centered, own line -->
       <div class="mb-5 text-center" id="war-headline-wrap">
@@ -109,11 +109,11 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
 
-      <!-- Row 2: 3/4 image + 1/4 text -->
-      <div class="grid grid-cols-4 gap-3 items-center">
+      <!-- Row 2: Image + text stacked vertically -->
+      <div class="grid grid-cols-1 gap-6 items-start">
 
-        <!-- 3/4: It Was War composite — bleeds to container left edge -->
-        <div class="col-span-3 -ml-5" id="war-image">
+        <!-- Image — full width -->
+        <div id="war-image">
           <img
             src="/images/Moto-Nineties-McGrath-Emig-War-2.jpg"
             alt="McGrath vs Emig — It Was War"
@@ -121,8 +121,8 @@ import Layout from '../layouts/Layout.astro';
           />
         </div>
 
-        <!-- 1/4: Copy -->
-        <div class="col-span-1" id="war-copy">
+        <!-- Copy -->
+        <div id="war-copy">
           <p class="font-display text-blue uppercase leading-snug mb-4" style="font-size: clamp(1.15rem, 1.9vw, 1.55rem);">
             In the late nineties, two riders transformed motocross into something else entirely — a spectacle, a soap opera, a war.
           </p>
@@ -141,92 +141,134 @@ import Layout from '../layouts/Layout.astro';
 
       </div>
     </div>
+    <!-- Tear rip at seam -->
+    <img src="/images/BaseRipCleanNew.png" alt="" aria-hidden="true" class="absolute left-1/2 pointer-events-none z-30 w-full"
+         style="bottom: 0; transform: translateX(-50%) translateY(95%); max-width: 1600px;" />
   </section>
 
-  <!-- ── TRAILER ────────────────────────────────────────────────────────────── -->
-  <section class="section relative overflow-hidden" style="background: #04377c;" id="trailer-section">
-    <img src="/images/Blue-Scratch-background.jpg" alt=""
-         class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none mix-blend-overlay" />
-    <div class="max-w-3xl mx-auto relative z-10">
-      <p class="font-sans text-paper/60 text-xs tracking-[0.15em] uppercase mb-4" id="trailer-label">Watch</p>
-      <h2 class="font-display text-4xl sm:text-6xl uppercase text-paper mb-8 leading-none" id="trailer-heading">
-        The Trailer
-      </h2>
-      <div class="relative w-full aspect-video bg-ink/40 border border-paper/20 flex items-center justify-center" id="trailer-player">
-        <div class="text-center">
-          <div class="w-16 h-16 rounded-full border-2 border-red flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-red/20 transition-colors">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M6 4l12 6-12 6V4z" fill="#d81d28"/>
-            </svg>
-          </div>
-          <p class="font-sans text-paper/60 text-xs">Available at The Hammer Factory</p>
-          <a
-            href="https://thehammerfactory.com"
-            target="_blank"
-            rel="noopener"
-            class="inline-block mt-3 text-xs font-display tracking-widest uppercase text-red hover:text-paper transition-colors"
-          >
-            Watch Now →
-          </a>
-        </div>
+  <!-- ── BLOW-OUT PARTY ────────────────────────────────────────────────────── -->
+  <section class="section relative" style="background: #04377c; padding-top: 8rem; padding-bottom: 8rem;" id="party-section">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <img src="/images/Blue-Scratch-background.jpg" alt="" class="w-full h-full object-cover opacity-25" />
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center px-5">
+      <img
+        src="/images/Blow-Out-Party.webp"
+        alt="It Was a Blow-Out Party"
+        class="mx-auto mb-10 w-full"
+        style="max-width: 720px;"
+        id="party-headline"
+      />
+      <p class="font-display text-red uppercase tracking-widest text-sm mb-2">Now You're Invited.</p>
+      <p class="font-display text-paper uppercase tracking-widest text-sm mb-8">Join the Mix</p>
+      <div class="flex items-center justify-center gap-8">
+        <a href="https://www.instagram.com/moto.nineties" target="_blank" rel="noopener"
+           class="flex flex-col items-center gap-2 text-paper hover:text-red transition-colors">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="font-display text-xs tracking-widest uppercase">@moto.nineties</span>
+        </a>
+        <a href="https://www.facebook.com/motonineties" target="_blank" rel="noopener"
+           class="flex flex-col items-center gap-2 text-paper hover:text-red transition-colors">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+          <span class="font-display text-xs tracking-widest uppercase">Moto Nineties</span>
+        </a>
       </div>
     </div>
+    <img src="/images/DuctTape-Long.png" alt="" aria-hidden="true" class="absolute left-1/2 pointer-events-none z-30"
+         style="bottom: 0; transform: translateX(-50%) translateY(50%); width: 800px; max-width: 90%;" />
   </section>
 
-  <!-- ── EMAIL CAPTURE ──────────────────────────────────────────────────────── -->
-  <section class="section relative overflow-hidden bg-ink border-t border-red/20" id="email">
-    <img
-      src="/images/PaintSprayRight.png"
-      alt=""
-      class="absolute right-0 top-0 h-full object-contain object-right opacity-15 pointer-events-none"
-    />
-    <div class="relative z-10 max-w-lg mx-auto text-center">
-      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">Early Access</p>
-      <h2 class="font-display text-5xl sm:text-7xl uppercase text-paper leading-none mb-4" id="email-heading">
-        Be First.
-      </h2>
-      <p class="font-sans text-paper/60 text-sm mb-8">
-        Screenings, premiere details, and merch drops — before anyone else.
+  <!-- ── MERCH CTA ──────────────────────────────────────────────────────────── -->
+  <section class="section relative bg-white" style="padding-top: 5rem; padding-bottom: 5rem;" id="merch-cta">
+    <div class="max-w-3xl mx-auto text-center px-5">
+      <img
+        src="/images/merch/Merch-Title.webp"
+        alt="Merch"
+        class="mx-auto mb-6"
+        style="max-width: 416px; width: 100%;"
+        id="merch-cta-title"
+      />
+      <img
+        src="/images/MErch-Group-Sm.png"
+        alt="Moto Nineties Merch"
+        class="mx-auto mb-6 w-full"
+        style="max-width: 600px;"
+        id="merch-cta-img"
+      />
+      <p class="font-display text-red uppercase tracking-widest mb-8" style="font-size: clamp(1.1rem, 2vw, 1.5rem);">
+        First Drop Is Live Now
       </p>
-      <form
-        class="flex flex-col sm:flex-row gap-0 max-w-sm mx-auto"
-        onsubmit="handleEmailSubmit(event)"
-        id="email-form-wrap"
-      >
-        <input
-          type="email"
-          name="email"
-          placeholder="Your email"
-          required
-          class="flex-1 bg-paper/10 border border-paper/20 px-4 py-3.5 text-sm text-paper placeholder:text-paper/40 focus:outline-none focus:border-red font-sans"
-        />
-        <button
-          type="submit"
-          class="bg-red text-paper px-6 py-3.5 text-xs font-display tracking-widest uppercase hover:bg-paper hover:text-ink transition-colors shrink-0"
-        >
-          Join
-        </button>
-      </form>
-      <p class="text-paper/30 text-xs mt-3 font-sans">No spam. Ever.</p>
+      <a href="/merch"
+         class="inline-flex items-center gap-3 text-paper font-display text-sm tracking-widest uppercase px-8 py-4 hover:bg-red transition-colors"
+         style="background: #04377c;">
+        Shop Limited Drop ⚡
+      </a>
     </div>
+    <img src="/images/BlackTape-Long.png" alt="" aria-hidden="true" class="absolute left-1/2 pointer-events-none z-30"
+         style="bottom: 0; transform: translateX(-50%) translateY(50%); width: 800px; max-width: 90%;" />
   </section>
 
-  <!-- ── INSTAGRAM ─────────────────────────────────────────────────────────── -->
-  <section class="section relative overflow-hidden" style="background: #04377c;">
-    <img src="/images/Blue-Scratch-background.jpg" alt=""
-         class="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none" />
-    <div class="relative z-10 max-w-xl mx-auto text-center">
-      <p class="font-sans text-paper/60 text-xs tracking-[0.15em] uppercase mb-4">Follow the story</p>
+  <!-- ── RIDERS CTA ─────────────────────────────────────────────────────────── -->
+  <section class="section relative" style="padding-top: 5rem; padding-bottom: 5rem;" id="riders-cta">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <img src="/images/Cut-of-crowd-2.jpg" alt="" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background: rgba(4,55,124,0.7);"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-5 grid md:grid-cols-2 gap-8 items-center">
+      <div id="riders-cta-copy">
+        <p class="font-sans text-paper/60 text-xs tracking-[0.15em] uppercase mb-4">Hi Flyers</p>
+        <h2 class="font-display text-paper uppercase leading-none mb-6" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
+          The Riders
+        </h2>
+        <p class="font-sans text-paper/70 text-sm leading-relaxed mb-8 max-w-sm">
+          McGrath. Emig. The kings of an era that changed the sport forever.
+        </p>
+        <a href="/the-riders"
+           class="inline-flex items-center gap-3 border border-paper text-paper font-display text-sm tracking-widest uppercase px-8 py-4 hover:bg-paper hover:text-ink transition-colors">
+          Meet the Riders →
+        </a>
+      </div>
+      <div id="riders-cta-img" class="relative flex items-center justify-center" style="height: 560px;">
+        <img src="/images/cards/mcgrath-front.png"    class="card-drop absolute w-60 drop-shadow-2xl" style="--rot: -18deg; --tx: -60px; --ty: 20px;"  alt="" />
+        <img src="/images/cards/emig-front.png"       class="card-drop absolute w-60 drop-shadow-2xl" style="--rot: 8deg;  --tx: 30px;  --ty: -30px;" alt="" />
+        <img src="/images/cards/pastrana-front.png"   class="card-drop absolute w-60 drop-shadow-2xl" style="--rot: -5deg; --tx: -20px; --ty: 60px;"  alt="" />
+        <img src="/images/cards/carmichael-front.png" class="card-drop absolute w-60 drop-shadow-2xl" style="--rot: 22deg; --tx: 70px;  --ty: 10px;"  alt="" />
+        <img src="/images/cards/hart-front.png"       class="card-drop absolute w-60 drop-shadow-2xl" style="--rot: -12deg; --tx: 10px; --ty: -60px;" alt="" />
+      </div>
+    </div>
+    <img src="/images/DuctTape-Long.png" alt="" aria-hidden="true" class="absolute left-1/2 pointer-events-none z-30"
+         style="bottom: 0; transform: translateX(-50%) translateY(50%); width: 800px; max-width: 90%;" />
+  </section>
+
+  <!-- ── SEE THE TRAILER ────────────────────────────────────────────────────── -->
+  <section class="section relative bg-ink" style="padding-top: 10rem;" id="trailer-section">
+    <div class="max-w-xl mx-auto text-center px-5 relative z-10">
+      <img
+        src="/images/LogoRough.png"
+        alt="Moto Nineties"
+        class="mx-auto mb-8"
+        style="width: 180px;"
+      />
+      <h2 class="font-display text-paper uppercase leading-none mb-4" style="font-size: clamp(2rem, 4.5vw, 3.75rem); text-wrap: balance;">
+        A Film by The Hammer Factory
+      </h2>
       <a
-        href="https://www.instagram.com/moto.nineties"
+        href="https://thehammerfactory.com/documentary/"
         target="_blank"
         rel="noopener"
-        class="font-display text-5xl sm:text-7xl uppercase text-paper hover:text-red transition-colors leading-none block mb-6"
-        id="ig-handle"
+        class="inline-flex items-center gap-3 border-2 border-paper text-paper font-display text-sm tracking-widest uppercase px-10 py-5 hover:bg-paper hover:text-ink transition-colors rounded-full"
+        id="trailer-cta-btn"
       >
-        @moto.nineties
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+          <path d="M6 4l12 6-12 6V4z" fill="currentColor"/>
+        </svg>
+        See the Trailer
       </a>
-      <span class="red-rule mx-auto block"></span>
     </div>
   </section>
 
@@ -301,65 +343,63 @@ import Layout from '../layouts/Layout.astro';
     scrollTrigger: { trigger: '#war-copy', start: 'top 88%' },
   });
 
-  // ── Trailer section ──────────────────────────────────────────────────────────
-  // Label drifts up first
-  gsap.from('#trailer-label', {
+  // ── Blow-Out Party section ───────────────────────────────────────────────────
+  gsap.from('#party-headline', {
     opacity: 0,
-    y: 16,
-    duration: 0.55,
-    ease: 'power2.out',
-    scrollTrigger: { trigger: '#trailer-section', start: 'top 82%' },
-  });
-
-  // Heading slams down from above
-  gsap.from('#trailer-heading', {
-    opacity: 0,
-    y: -52,
-    duration: 0.75,
-    ease: 'power4.out',
-    scrollTrigger: { trigger: '#trailer-section', start: 'top 82%' },
-    delay: 0.12,
-  });
-
-  // Player box rises up after heading lands
-  gsap.from('#trailer-player', {
-    opacity: 0,
-    y: 48,
-    duration: 0.9,
-    ease: 'power2.out',
-    scrollTrigger: { trigger: '#trailer-player', start: 'top 92%' },
-    delay: 0.2,
-  });
-
-  // ── Email section ────────────────────────────────────────────────────────────
-  // "Be First." pops in with scale overshoot
-  gsap.from('#email-heading', {
-    opacity: 0,
-    scale: 0.8,
-    y: 24,
-    duration: 0.85,
-    ease: 'back.out(1.8)',
-    scrollTrigger: { trigger: '#email', start: 'top 80%' },
-  });
-
-  // Form rises after heading settles
-  gsap.from('#email-form-wrap', {
-    opacity: 0,
-    y: 36,
-    duration: 0.7,
-    ease: 'power2.out',
-    scrollTrigger: { trigger: '#email', start: 'top 80%' },
-    delay: 0.28,
-  });
-
-  // ── Instagram section ────────────────────────────────────────────────────────
-  gsap.from('#ig-handle', {
-    opacity: 0,
-    scale: 0.82,
-    y: 28,
+    y: 40,
     duration: 0.9,
     ease: 'power3.out',
-    scrollTrigger: { trigger: '#ig-handle', start: 'top 88%' },
+    scrollTrigger: { trigger: '#party-section', start: 'top 82%' },
+  });
+
+  // ── Merch CTA ────────────────────────────────────────────────────────────────
+  gsap.from('#merch-cta-img', {
+    opacity: 0,
+    y: 40,
+    duration: 0.9,
+    ease: 'power2.out',
+    scrollTrigger: { trigger: '#merch-cta', start: 'top 82%' },
+  });
+
+  // ── Riders CTA ───────────────────────────────────────────────────────────────
+  gsap.from('#riders-cta-copy > *', {
+    opacity: 0,
+    x: -30,
+    duration: 0.7,
+    stagger: 0.1,
+    ease: 'power2.out',
+    scrollTrigger: { trigger: '#riders-cta', start: 'top 82%' },
+  });
+
+  // Cards drop in one by one from above, landing at their rotated positions
+  gsap.utils.toArray('.card-drop').forEach((card: Element, i: number) => {
+    const el = card as HTMLElement;
+    const rot = el.style.getPropertyValue('--rot');
+    const tx  = el.style.getPropertyValue('--tx');
+    const ty  = el.style.getPropertyValue('--ty');
+    gsap.fromTo(el,
+      { opacity: 0, y: -180, x: tx, rotation: 0, scale: 0.7 },
+      {
+        opacity: 1,
+        y: ty,
+        x: tx,
+        rotation: rot,
+        scale: 1,
+        duration: 0.55,
+        ease: 'bounce.out',
+        delay: i * 0.15,
+        scrollTrigger: { trigger: '#riders-cta', start: 'top 80%' },
+      }
+    );
+  });
+
+  // ── Trailer CTA ──────────────────────────────────────────────────────────────
+  gsap.from('#trailer-cta-btn', {
+    opacity: 0,
+    scale: 0.88,
+    duration: 0.8,
+    ease: 'back.out(1.6)',
+    scrollTrigger: { trigger: '#trailer-section', start: 'top 82%' },
   });
 </script>
 

@@ -8,20 +8,19 @@ import Layout from '../layouts/Layout.astro';
   <section class="relative min-h-svh flex flex-col justify-end overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/Moto-Nineties-McGrath-Emig-War-2.jpg"
+        src="/images/TrailerScreen.jpg"
         alt=""
         class="w-full h-full object-cover photo-bw"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20"></div>
     </div>
-    <div class="relative z-10 px-5 pb-16 pt-32 max-w-2xl">
-      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">The Film</p>
-      <h1 class="font-display text-5xl sm:text-7xl uppercase text-paper leading-none mb-6">
-        Rub Some<br/>
-        <span class="text-red">Dirt on It.</span>
+    <div class="relative z-10 px-5 pb-16 pt-32 max-w-2xl text-center sm:text-left" id="hero-content">
+      <img src="/images/LogoRough.png" alt="Moto Nineties" class="mb-6 mx-auto sm:mx-0" style="width: 280px; filter: none; box-shadow: none; display: block;" />
+      <h1 class="font-display text-3xl sm:text-5xl lg:text-7xl uppercase text-paper leading-none mb-6">
+        Rub Some <span class="text-red">Dirt on It.</span>
       </h1>
-      <span class="red-rule mb-6 block"></span>
-      <p class="font-sans text-paper/70 text-sm sm:text-base leading-relaxed max-w-sm">
+      <span class="red-rule mb-6 block mx-auto sm:mx-0"></span>
+      <p class="font-sans text-paper/70 text-sm sm:text-base leading-relaxed max-w-sm mx-auto sm:mx-0">
         The rivalry between Jeremy McGrath and Jeff Emig defined the wildest era in motocross history.
         This is their war.
       </p>
@@ -29,67 +28,60 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ── SYNOPSIS ───────────────────────────────────────────────────────────── -->
-  <section class="section bg-ink">
-    <div class="max-w-xl mx-auto">
-      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-6">The Story</p>
-      <h2 class="font-display text-3xl sm:text-5xl uppercase text-paper leading-none mb-8">
-        McGrath vs Emig.
-      </h2>
-      <div class="space-y-4 font-sans text-paper/70 text-sm sm:text-base leading-relaxed">
-        <p>
-          In the late nineties, two riders transformed motocross into something else entirely —
-          a spectacle, a soap opera, a war. Jeremy McGrath was the king. Jeff Emig was the
-          challenger who wouldn't back down.
-        </p>
-        <p>
-          What they called the fun era was anything but. It was the most intense period the sport
-          has ever seen.
-        </p>
+  <section class="bg-ink px-5 relative z-10" style="margin-top: -10rem; padding-top: 2rem; padding-bottom: 5rem;">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left: text, left-aligned matching hero margin -->
+      <div>
+        <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-6">The Story</p>
+        <h2 class="font-display text-3xl sm:text-5xl uppercase text-paper leading-none mb-8">
+          McGrath vs Emig.
+        </h2>
+        <div class="space-y-4 font-sans text-paper/70 text-sm sm:text-base leading-relaxed">
+          <p>
+            In the late nineties, two riders transformed motocross into something else entirely —
+            a spectacle, a soap opera, a war. Jeremy McGrath was the king. Jeff Emig was the
+            challenger who wouldn't back down.
+          </p>
+          <p>
+            What they called the fun era was anything but. It was the most intense period the sport
+            has ever seen.
+          </p>
+        </div>
       </div>
-      <div class="mt-10 pt-10 border-t border-paper/10">
-        <p class="font-display text-xl sm:text-3xl uppercase text-paper/40 italic leading-snug max-w-sm">
-          "They call it the fun era.<br/>
-          <span class="text-red not-italic">It was really a war."</span>
-        </p>
+      <!-- Right: image -->
+      <div class="pr-8">
+        <img
+          src="/images/TrailerScreenRace.jpg"
+          alt="Race action"
+          class="w-full object-cover"
+          style="border-radius: 1rem; margin-top: -8rem; max-height: 700px;"
+        />
       </div>
     </div>
   </section>
 
-  <!-- ── COMING SUMMER ─────────────────────────────────────────────────────── -->
-  <section class="relative section overflow-hidden bg-ink border-t border-paper/10">
-    <img
-      src="/images/Moto-Nineties-Coming-Summer.png"
-      alt="Coming Summer 2026"
-      class="max-w-xs sm:max-w-md mx-auto block"
-    />
-  </section>
+  <!-- ── POSTER ────────────────────────────────────────────────────────────── -->
+  <section class="relative" style="background-image: url('/images/ConcreteWall.jpg'); background-size: cover; background-position: center; padding: 6rem 1.25rem;">
+    <!-- Poster + tape wrapper -->
+    <div class="relative mx-auto" style="max-width: 700px;">
 
-  <!-- ── CREDITS ────────────────────────────────────────────────────────────── -->
-  <section class="section bg-ink border-t border-paper/10">
-    <div class="max-w-xl mx-auto">
-      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-8">Credits</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 font-sans text-sm">
-        <div>
-          <p class="text-smoke text-xs tracking-widest uppercase mb-3">Executive Producers</p>
-          <ul class="space-y-1 text-paper/80">
-            <li>Lawrence Lewis</li>
-            <li>Carey Hart</li>
-            <li>Travis Pastrana</li>
-            <li>John Fox</li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-smoke text-xs tracking-widest uppercase mb-3">Managing Producer</p>
-          <ul class="space-y-1 text-paper/80">
-            <li>Adriana Zyskowski</li>
-          </ul>
-          <p class="text-smoke text-xs tracking-widest uppercase mb-3 mt-6">Secret Weapons</p>
-          <ul class="space-y-1 text-paper/80">
-            <li>Ian Gram</li>
-            <li>Geoffrey Boynton</li>
-          </ul>
-        </div>
-      </div>
+      <!-- Tape 1 — top, overlaps top edge of poster -->
+      <img src="/images/Tape1.png" alt="" aria-hidden="true"
+           class="absolute left-1/2 pointer-events-none z-20"
+           style="transform: translateX(-50%) translateY(-50%); top: 0; width: clamp(160px, 40%, 260px);" />
+
+      <!-- Poster -->
+      <img
+        src="/images/Moto-Nineties-Poster.jpg"
+        alt="Moto Nineties — Official Poster"
+        class="relative z-10 w-full block"
+        style="box-shadow: 0 2px 8px rgba(0,0,0,0.3); margin-top: clamp(0rem, 5vw, -8rem);"
+      />
+
+      <!-- Tape 2 — bottom, overlaps bottom edge of poster -->
+      <img src="/images/Tape2.png" alt="" aria-hidden="true"
+           class="absolute left-1/2 pointer-events-none z-20"
+           style="transform: translateX(-50%) translateY(50%); bottom: 0; width: clamp(160px, 40%, 260px);" />
     </div>
   </section>
 
@@ -100,9 +92,6 @@ import Layout from '../layouts/Layout.astro';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from('.relative.z-10 > *', {
-    y: 30, opacity: 0, duration: 0.9, stagger: 0.12, delay: 0.4, ease: 'power2.out',
-  });
 
   gsap.utils.toArray('section:not(:first-child)').forEach((el) => {
     gsap.from(el as Element, {

@@ -4,54 +4,209 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Merch — Moto Nineties">
 
-  <section class="pt-32 pb-12 px-5 bg-ink">
-    <div class="max-w-4xl mx-auto">
-      <p class="font-sans text-smoke text-xs tracking-[0.15em] uppercase mb-4">Gear Up</p>
-      <h1 class="font-display text-5xl sm:text-7xl uppercase text-paper leading-none">
-        Merch.
-      </h1>
-      <span class="red-rule mt-6 block"></span>
-    </div>
-  </section>
+  <!-- ── SINGLE PAGE BACKGROUND ────────────────────────────────────────────── -->
+  <div class="relative min-h-screen" style="background-image: url('/images/merch/PaperTextureLongest.webp'); background-repeat: repeat-y; background-size: cover; background-position: center top;">
 
-  <section class="px-5 pb-20 bg-ink">
-    <div class="max-w-4xl mx-auto">
-      <div class="flex flex-col sm:flex-row gap-8 items-start mb-16">
+    <!-- ── HEADER ──────────────────────────────────────────────────────────── -->
+    <section class="relative pt-20 pb-12 px-5 text-center">
+      <div class="max-w-4xl mx-auto flex flex-col items-center">
+
+        <!-- Logo -->
         <img
-          src="/images/MErch-Group-Sm.png"
-          alt="Moto Nineties Merch"
-          class="w-full sm:w-72 shrink-0"
+          id="merch-logo"
+          src="/images/LogoRough.png"
+          alt="Moto Nineties"
+          style="width: 200px; margin-bottom: 2rem;"
         />
-        <div class="pt-4">
-          <p class="font-sans text-paper/70 text-sm leading-relaxed mb-6">
-            Limited run. Built for people who were there — and those who wish they were.
-          </p>
-          <p class="font-sans text-smoke text-xs tracking-widest uppercase">Shop launches with the film.</p>
-          <span class="red-rule mt-4 block"></span>
-        </div>
-      </div>
 
-      <!-- Shopify embed placeholder -->
-      <div
-        id="shopify-section"
-        class="border border-paper/10 p-10 text-center"
-      >
-        <!-- Replace with Shopify Buy Button embed script -->
-        <p class="font-sans text-smoke text-xs tracking-widest uppercase mb-2">Shop Coming Soon</p>
-        <p class="font-sans text-paper/40 text-sm">Drop your email on the home page to get notified first.</p>
-        <a href="/#email" class="inline-block mt-4 text-xs font-display tracking-widest uppercase text-red hover:text-paper transition-colors">
-          Get Early Access →
-        </a>
+        <!-- Title graphic -->
+        <img
+          id="merch-headline"
+          src="/images/merch/Merch-Title.webp"
+          alt="Merch"
+          style="max-width: 450px; width: 100%; margin-bottom: 1.25rem;"
+        />
+
+        <!-- Subtext -->
+        <p id="merch-sub" class="font-sans text-black text-sm max-w-sm leading-relaxed" style="color: #111;">
+          Limited run. Built for people who were there — and those who wish they were. Every purchase helps power the documentary's soundtrack.
+        </p>
+
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ── SHOP ────────────────────────────────────────────────────────────── -->
+    <section class="relative pb-24 px-5">
+      <div class="max-w-4xl mx-auto space-y-16">
+
+        <!-- Collection 1: Moto Nineties Apparel -->
+        <div class="text-center">
+          <img src="/images/merch/Moto-Nineties-Apparel.webp" alt="Moto Nineties Apparel"
+            class="mx-auto mb-8" style="max-width: 450px; width: 100%;" />
+          <div id="collection-component-1776473923494"></div>
+        </div>
+
+        <!-- Collection 2: Signed Quality Prints -->
+        <div class="text-center">
+          <img src="/images/merch/Signed-Quality-Prints.webp" alt="Signed Quality Prints"
+            class="mx-auto mb-8" style="max-width: 450px; width: 100%;" />
+          <div id="collection-component-1776474025430"></div>
+        </div>
+
+        <!-- Collection 3: Limited Products -->
+        <div class="text-center">
+          <img src="/images/merch/Limited-Products-Text.webp" alt="Limited Products"
+            class="mx-auto mb-8" style="max-width: 450px; width: 100%;" />
+          <div id="collection-component-1776473979684"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
 
 </Layout>
+
+<!-- Shopify Buy Button — single SDK load, all three collections -->
+<script is:inline>
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: '0jhzbt-kz.myshopify.com',
+      storefrontAccessToken: '790978e5f7e57b6480693647fc29066e',
+    });
+
+    var sharedOptions = {
+      "product": {
+        "styles": {
+          "product": {
+            "@media (min-width: 601px)": {
+              "max-width": "calc(25% - 20px)",
+              "margin-left": "20px",
+              "margin-bottom": "50px",
+              "width": "calc(25% - 20px)"
+            },
+            "img": {
+              "height": "calc(100% - 15px)",
+              "position": "absolute",
+              "left": "0",
+              "right": "0",
+              "top": "0"
+            },
+            "imgWrapper": {
+              "padding-top": "calc(75% + 15px)",
+              "position": "relative",
+              "height": "0"
+            }
+          },
+          "button": {
+            ":hover": { "background-color": "#d81d28" },
+            "background-color": "#04377c",
+            ":focus": { "background-color": "#d81d28" }
+          }
+        },
+        "buttonDestination": "modal",
+        "contents": { "options": false },
+        "text": { "button": "View product" }
+      },
+      "productSet": {
+        "styles": {
+          "products": {
+            "@media (min-width: 601px)": { "margin-left": "-20px" }
+          }
+        }
+      },
+      "modalProduct": {
+        "contents": {
+          "img": false,
+          "imgWithCarousel": true,
+          "button": false,
+          "buttonWithQuantity": true
+        },
+        "styles": {
+          "product": {
+            "@media (min-width: 601px)": {
+              "max-width": "100%",
+              "margin-left": "0px",
+              "margin-bottom": "0px"
+            }
+          },
+          "button": {
+            ":hover": { "background-color": "#d81d28" },
+            "background-color": "#04377c",
+            ":focus": { "background-color": "#d81d28" }
+          }
+        },
+        "text": { "button": "Add to cart" }
+      },
+      "option": {},
+      "cart": {
+        "styles": {
+          "button": {
+            ":hover": { "background-color": "#d81d28" },
+            "background-color": "#04377c",
+            ":focus": { "background-color": "#d81d28" }
+          }
+        },
+        "text": { "total": "Subtotal", "button": "Checkout" }
+      },
+      "toggle": {
+        "styles": {
+          "toggle": {
+            "background-color": "#04377c",
+            ":hover": { "background-color": "#d81d28" },
+            ":focus": { "background-color": "#d81d28" }
+          }
+        }
+      }
+    };
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('collection', {
+        id: '637642211692',
+        node: document.getElementById('collection-component-1776473979684'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: sharedOptions,
+      });
+      ui.createComponent('collection', {
+        id: '631388897644',
+        node: document.getElementById('collection-component-1776473923494'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: sharedOptions,
+      });
+      ui.createComponent('collection', {
+        id: '637642309996',
+        node: document.getElementById('collection-component-1776474025430'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: sharedOptions,
+      });
+    });
+  }
+})();
+</script>
 
 <script>
   import { gsap } from 'gsap';
 
-  gsap.from('section > div > *', {
-    opacity: 0, y: 30, duration: 0.9, stagger: 0.1, delay: 0.3, ease: 'power2.out',
-  });
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.from('#merch-logo',     { opacity: 0, y: -20, duration: 0.55 }, 0.2);
+  tl.from('#merch-headline', { opacity: 0, y: -30, duration: 0.6, ease: 'power4.out' }, 0.45);
+  tl.from('#merch-sub',      { opacity: 0, y: 16, duration: 0.5 }, 0.75);
 </script>
