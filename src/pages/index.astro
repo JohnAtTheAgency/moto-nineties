@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getPageSEO } from '../lib/sitemap-seo';
+const seo = await getPageSEO('home');
 ---
 
-<Layout title="Moto Nineties — Coming Summer 2026">
+<Layout title={seo.title} description={seo.description} image={seo.ogImage}>
 
   <!-- ── HERO ──────────────────────────────────────────────────────────────── -->
   <!--

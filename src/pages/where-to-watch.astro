@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getPageSEO } from '../lib/sitemap-seo';
+const seo = await getPageSEO('where-to-watch');
 ---
 
-<Layout title="Where to Watch — Moto Nineties">
+<Layout title={seo.title} description={seo.description} image={seo.ogImage}>
 
   <!-- ── HEADER ────────────────────────────────────────────────────────────── -->
   <section class="pt-32 pb-12 px-5 bg-ink">

@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getPageSEO } from '../lib/sitemap-seo';
+const seo = await getPageSEO('merch');
 ---
 
-<Layout title="Merch — Moto Nineties">
+<Layout title={seo.title} description={seo.description} image={seo.ogImage}>
 
   <!-- ── SINGLE PAGE BACKGROUND ────────────────────────────────────────────── -->
   <div class="relative min-h-screen" style="background-image: url('/images/merch/PaperTextureLongest.webp'); background-repeat: repeat-y; background-size: cover; background-position: center top;">
