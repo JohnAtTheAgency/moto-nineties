@@ -18,9 +18,9 @@ type SitemapPage = {
 };
 
 const DEFAULTS: PageSEO = {
-  title:       'Republic Brewing Co. — Manchester, NH',
-  description: 'Locally sourced, carefully crafted. Republic Brewing Co. is Manchester\'s craft brewery at 72 Old Granite Street.',
-  ogImage:     '/images/hero-night.jpg',
+  title:       'Moto Nineties',
+  description: 'They call it the fun era. It was really a war. A feature documentary. Coming Summer 2026.',
+  ogImage:     '/images/Moto-Nineties-McGrath-Emig-War.jpg',
 };
 
 let _cache: Map<string, PageSEO> | null = null;
